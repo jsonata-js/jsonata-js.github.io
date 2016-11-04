@@ -22,7 +22,7 @@ github_username: jsonata-js
 
 # Build settings
 markdown: kramdown
-theme: minimal-mistakes-jekyll 
+theme: minima 
 exclude:
   - Gemfile
   - Gemfile.lock
