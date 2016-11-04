@@ -4,5 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
+The primary purpose of this language is to extract values from JSON documents, with the additional capabilities to combine these values using a set of basic functions and operators, and also the ability to format the output into any arbitrary JSON structure.
