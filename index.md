@@ -26,7 +26,7 @@ var result = jsonata(expression).evaluate(data);  // returns 24
 
 In a browser (works in latest Chrome, Firefox, Safari):
 ```
-<&amp; !DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -22,10 +22,9 @@ github_username: jsonata-js
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
 kramdown:
   input: GFM
-  hard_wrap: false
+  syntax_highlighter: rouge
 theme: minima 
 exclude:
   - Gemfile
