@@ -26,7 +26,7 @@ var result = jsonata(expression).evaluate(data);  // returns 24
 
 In a browser (works in latest Chrome, Firefox, Safari):
 ```
-<!DOCTYPE html>
+<&amp; !DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,7 +69,7 @@ For example:
 
 `{ "position": 16, "token": "}", "value": "]", "message": "Syntax error: expected ']' got '}' at column 16" }`
 
-##More Information
+## More Information
 Tutorial [tutorial.md](tutorial.md)
 Function library [functions.md](functions.md)
 
