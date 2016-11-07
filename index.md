@@ -17,7 +17,7 @@ and operators, and also the ability to format the output into any arbitrary JSON
 
 ## Usage
 In node.js (works in v0.10 and later):
-```
+``` javascript
 var jsonata = require("jsonata");
 var data = { "example": [ {"value": 4}, {"value": 7}, {"value": 13}] };
 var expression = "$sum(example.value)";
@@ -25,7 +25,7 @@ var result = jsonata(expression).evaluate(data);  // returns 24
 ```
 
 In a browser (works in latest Chrome, Firefox, Safari):
-```
+``` html
 <!DOCTYPE html>
 <html lang="en">
 <head>
