@@ -3,8 +3,6 @@
 topnav:
 - title: Topnav
   items:
-    - title: Home
-      url: /
     - title: Try!
       external_url: http://try.jsonata.org
     - title: npm

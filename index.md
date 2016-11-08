@@ -17,27 +17,27 @@ and operators, and also the ability to format the output into any arbitrary JSON
 
 ## Usage
 In node.js (works in v0.10 and later):
-```
-var jsonata = require("jsonata");
+<div class="highlighter-rouge"><pre class="highlight"><code>var jsonata = require("jsonata");
 var data = { "example": [ {"value": 4}, {"value": 7}, {"value": 13}] };
 var expression = "$sum(example.value)";
 var result = jsonata(expression).evaluate(data);  // returns 24
-```
+</code></pre>
+</div>
 
 In a browser (works in latest Chrome, Firefox, Safari):
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>JSONata test</title>
-    <script src="lib/jsonata.js"></script>
-</head>
-<body>
-<button onclick="alert(jsonata('[1..10]').evaluate())">Click me</button>
-</body>
-</html>
-```
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>JSONata test<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"lib/jsonata.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"alert(jsonata('[1..10]').evaluate())"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
 
 ## Developers
 If you want to run the latest code from git, here's how to get started:
