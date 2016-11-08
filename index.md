@@ -39,9 +39,6 @@ In a browser (works in latest Chrome, Firefox, Safari):
 </html>
 ```
 
-## Tutorial
-A tutorial on the JSONata language is available [here](tutorial.md)
-
 ## Developers
 If you want to run the latest code from git, here's how to get started:
 
@@ -68,10 +65,3 @@ and any other relevant information, including a meaningful message string.
 For example:
 
 `{ "position": 16, "token": "}", "value": "]", "message": "Syntax error: expected ']' got '}' at column 16" }`
-
-## More Information
-Tutorial [tutorial.md](tutorial.md)
-Function library [functions.md](functions.md)
-
-## Contributing
-See the [CONTRIBUTING.md](CONTRIBUTING.md) for details of how to contribute to this repo.

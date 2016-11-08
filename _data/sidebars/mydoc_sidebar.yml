@@ -26,6 +26,10 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Introduction
-      url: /mydoc_introduction.html
+    - title: Tutorial
+      url: /tutorial.html
+      output: web, pdf
+
+    - title: Function Library
+      url: /functions.html
       output: web, pdf
