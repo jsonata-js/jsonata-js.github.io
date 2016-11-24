@@ -2,7 +2,6 @@
 title: Function Library
 sidebar: mydoc_sidebar
 permalink: functions.html
-tags: [functions]
 folder: mydoc
 ---
 

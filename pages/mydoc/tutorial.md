@@ -2,7 +2,6 @@
 title: Tutorial
 sidebar: mydoc_sidebar
 permalink: tutorial.html
-tags: [tutorial]
 folder: mydoc
 ---
 

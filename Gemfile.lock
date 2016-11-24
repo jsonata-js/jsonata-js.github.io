@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/jekyll/jekyll.git
-  revision: 57a6847165b75fb6c8c37c0ec32326ca0920432d
+  revision: ce67da0f80058f579630e0adcec538facd8418a8
   specs:
-    jekyll (3.3.0)
+    jekyll (3.3.1)
       addressable (~> 2.4)
       colorator (~> 1.0)
       jekyll-sass-converter (~> 1.0)
@@ -22,11 +22,11 @@ GEM
     colorator (1.1.0)
     ffi (1.9.14)
     forwardable-extended (2.6.0)
-    jekyll-sass-converter (1.4.0)
+    jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
-    kramdown (1.12.0)
+    kramdown (1.13.0)
     liquid (3.0.6)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)

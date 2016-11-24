@@ -26,10 +26,60 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Tutorial
-      url: /tutorial.html
+  - title: Language guide
+    output: web, pdf
+    folderitems:
+
+    - title: Basic selection
+      url: /basic.html
       output: web, pdf
 
-    - title: Function Library
-      url: /functions.html
+    - title: Complex selection
+      url: /complex.html
       output: web, pdf
+
+    - title: Combining values
+      url: /combining.html
+      output: web, pdf
+
+    - title: Result structures
+      url: /construction.html
+      output: web, pdf
+
+    - title: Programming constructs
+      url: /programming.html
+      output: web, pdf
+
+  - title: Function Library
+    url: /functions.html
+    output: web, pdf
+    folderitems:
+
+      - title: String functions
+        url: /string-functions.html
+        output: web, pdf
+
+      - title: Numeric functions
+        url: /numeric-functions.html
+        output: web, pdf
+
+      - title: Numeric aggregation functions
+        url: /aggregation-functions.html
+        output: web, pdf
+
+      - title: Boolean functions
+        url: /boolean-functions.html
+        output: web, pdf
+
+      - title: Array functions
+        url: /array-functions.html
+        output: web, pdf
+
+      - title: Object functions
+        url: /object-functions.html
+        output: web, pdf
+
+      - title: Higher order functions
+        url: /higher-order-functions.html
+        output: web, pdf
+
