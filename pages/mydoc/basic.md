@@ -19,7 +19,7 @@ the expression returns nothing (represented by Javascript _undefined_).  No erro
 as a result of non-existing data in the input document.
 
 The following sample JSON document is used by examples throughout this guide, unless otherwise indicated:
-```
+~~~ json
 {
   "FirstName": "Fred",
   "Surname": "Smith",
@@ -67,7 +67,7 @@ The following sample JSON document is used by examples throughout this guide, un
     }
   }
 }
-```
+~~~
 
 The following expressions yield the following results when applied to this JSON document:
 
@@ -113,12 +113,12 @@ array will be queried for selection.
 
 ### Top level arrays, nested arrays and array flattening
 Consider the JSON document:
-```
+~~~ json
 [
   { "ref": [ 1,2 ] },
   { "ref": [ 3,4 ] }
 ]
-```
+~~~
 At the top level, we have an array rather than an object.  If we want to select the first object in this top level array,
 we don't have a field name to append the `[0]` to.  We can't use `[0]` on its own because that clashes with the
 [array constructor](#array-constructors) syntax.  However, we can use the _context_ reference `$` to refer to the start of
