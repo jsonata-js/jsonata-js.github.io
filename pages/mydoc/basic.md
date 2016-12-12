@@ -19,55 +19,55 @@ the expression returns nothing (represented by Javascript _undefined_).  No erro
 as a result of non-existing data in the input document.
 
 The following sample JSON document is used by examples throughout this guide, unless otherwise indicated:
-~~~ json
-{
-  "FirstName": "Fred",
-  "Surname": "Smith",
-  "Age": 28,
-  "Address": {
-    "Street": "Hursley Park",
-    "City": "Winchester",
-    "Postcode": "SO21 2JN"
-  },
-  "Phone": [
+
     {
-      "type": "home",
-      "number": "0203 544 1234"
-    },
-    {
-      "type": "office",
-      "number": "01962 001234"
-    },
-    {
-      "type": "office",
-      "number": "01962 001235"
-    },
-    {
-      "type": "mobile",
-      "number": "077 7700 1234"
+      "FirstName": "Fred",
+      "Surname": "Smith",
+      "Age": 28,
+      "Address": {
+        "Street": "Hursley Park",
+        "City": "Winchester",
+        "Postcode": "SO21 2JN"
+      },
+      "Phone": [
+        {
+          "type": "home",
+          "number": "0203 544 1234"
+        },
+        {
+          "type": "office",
+          "number": "01962 001234"
+        },
+        {
+          "type": "office",
+          "number": "01962 001235"
+        },
+        {
+          "type": "mobile",
+          "number": "077 7700 1234"
+        }
+      ],
+      "Email": [
+        {
+          "type": "work",
+          "address": ["fred.smith@my-work.com", "fsmith@my-work.com"]
+        },
+        {
+          "type": "home",
+          "address": ["freddy@my-social.com", "frederic.smith@very-serious.com"]
+        }
+      ],
+      "Other": {
+        "Over 18 ?": true,
+        "Misc": null,
+        "Alternative.Address": {
+          "Street": "Brick Lane",
+          "City": "London",
+          "Postcode": "E1 6RF"
+        }
+      }
     }
-  ],
-  "Email": [
-    {
-      "type": "work",
-      "address": ["fred.smith@my-work.com", "fsmith@my-work.com"]
-    },
-    {
-      "type": "home",
-      "address": ["freddy@my-social.com", "frederic.smith@very-serious.com"]
-    }
-  ],
-  "Other": {
-    "Over 18 ?": true,
-    "Misc": null,
-    "Alternative.Address": {
-      "Street": "Brick Lane",
-      "City": "London",
-      "Postcode": "E1 6RF"
-    }
-  }
-}
-~~~
+
 
 The following expressions yield the following results when applied to this JSON document:
 
@@ -113,12 +113,12 @@ array will be queried for selection.
 
 ### Top level arrays, nested arrays and array flattening
 Consider the JSON document:
-~~~ json
-[
-  { "ref": [ 1,2 ] },
-  { "ref": [ 3,4 ] }
-]
-~~~
+
+    [
+      { "ref": [ 1,2 ] },
+      { "ref": [ 3,4 ] }
+    ]
+
 At the top level, we have an array rather than an object.  If we want to select the first object in this top level array,
 we don't have a field name to append the `[0]` to.  We can't use `[0]` on its own because that clashes with the
 [array constructor](#array-constructors) syntax.  However, we can use the _context_ reference `$` to refer to the start of
