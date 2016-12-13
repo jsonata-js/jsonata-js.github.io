@@ -6,8 +6,7 @@ folder: mydoc
 ---
 
 ## String expressions
-Path expressions that point to a string value will return that value.
-Strings can be combined using the concatenation operator '&'
+Path expressions that point to a string value will return that value.  Strings can be combined using the concatenation operator '&'
 
 Examples
 
@@ -25,9 +24,7 @@ Consider the following JSON document:
 
 
 ## Numeric expressions
-Path expressions that point to a number value will return that value.
-Numbers can be combined using the usual mathematical operators to produce
-a resulting number.  Supported operators:
+Path expressions that point to a number value will return that value.  Numbers can be combined using the usual mathematical operators to produce a resulting number.  Supported operators:
 - `+` addition
 - `-` subtraction
 - `*` multiplication
