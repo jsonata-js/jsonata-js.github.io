@@ -13,6 +13,7 @@ Casts the `arg` parameter to a number using the following casting rules
    - All other values cause an error to be thrown.
 
 ## `$abs(number)` - to be implemented
+
 ## `$round(number)` - to be implemented
 
 Rounds up to the nearest integer
