@@ -26,7 +26,7 @@ Returns the number of characters in the string `str`.  If `str` is not specified
 ### Examples
 `$length("Hello World")` => `11`
 
-## `$substring(str, start [, length])`
+## `$substring(str, start[, length])`
 
 Returns a string containing the characters in the first parameter `str` starting at position `start` (zero-offset).  If `str` is not specified (i.e. this function is invoked with only the numeric argument(s)), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
@@ -109,7 +109,7 @@ The optional `limit` parameter is a number that specifies the maximum number of 
 `$split("so many words", " ", 2)` => `[ "so", "many" ]`
 `$split("too much, punctuation. hard; to read", /[ ,.;]+/)` => `["too", "much", "punctuation", "hard", "to", "read"]`
 
-## `$join(array [, separator])`
+## `$join(array[, separator])`
 
 Joins an array of component strings into a single concatenated string with each component string separated by the optional `separator` parameter.
 
