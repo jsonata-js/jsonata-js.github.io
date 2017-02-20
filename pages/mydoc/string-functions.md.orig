@@ -5,8 +5,9 @@ permalink: string-functions.html
 folder: mydoc
 ---
 
-## `$string(arg)`
+## `$uppercase(str)`
 
+<<<<<<< HEAD
 Casts the `arg` parameter to a string using the following casting rules
    - Strings are unchanged
    - Functions are converted to an empty string
@@ -15,7 +16,7 @@ Casts the `arg` parameter to a string using the following casting rules
 
 If `arg` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `arg`. 
 
-#### Examples
+### Examples
 `$string(5)` => `"5"`
 `[1..5].$string()` => `["1", "2", "3", "4", "5"]`
    
@@ -23,10 +24,10 @@ If `arg` is not specified (i.e. this function is invoked with no arguments), the
 
 Returns the number of characters in the string `str`.  If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-#### Examples
+### Examples
 `$length("Hello World")` => `11`
 
-## `$substring(str, start[, length])`
+## `$substring(str, start [, length])`
 
 Returns a string containing the characters in the first parameter `str` starting at position `start` (zero-offset).  If `str` is not specified (i.e. this function is invoked with only the numeric argument(s)), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
@@ -34,41 +35,88 @@ If `length` is specified, then the substring will contain maximum `length` chara
 
 If `start` is negative then it indicates the number of characters from the end of `str`.  See [substr](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr) for full definition.
 
-#### Examples
+### Examples
 `$substring("Hello World", 3)` => `"lo World"`
 `$substring("Hello World", 3, 5)` => `"lo Wo"`
 `$substring("Hello World", -4)` => `"orld"`
 `$substring("Hello World", -4, 2)` => `"or"`
+=======
+Returns a string with all the characters of `str` converted to uppercase.
+
+_Example:_
+```
+$uppercase('Alice Smith')
+```
+returns `'ALICE SMITH'`
+
+## `$lowercase(str)`
+>>>>>>> 00bbb71b27e291869ce2a42e9ea963b3e6fafb5b
+
+Returns a string with all the characters of `str` converted to lowercase.
+
+<<<<<<< HEAD
+Returns the substring before the first occurrence of the character sequence `chars` in `str`.  If `str` is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of `str`.  If `str` does not contain `chars`, then it returns `str`.   An error is thrown if `str` and `chars` are not strings.
+
+### Examples
+`$substringBefore("Hello World", " ")` => `"Hello"`
+=======
+_Example:_
+```
+$lowercase('Robert Smith')
+```
+returns `'robert smith'`
+>>>>>>> 00bbb71b27e291869ce2a42e9ea963b3e6fafb5b
+
+## `$substring(str, start[, length])`
+
+<<<<<<< HEAD
+Returns the substring after the first occurrence of the character sequence `chars` in `str`.  If `str` is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of `str`.  If `str` does not contain `chars`, then it returns `str`.   An error is thrown if `str` and `chars` are not strings.
+
+### Examples
+`$substringAfter("Hello World", " ")` => `"World"`
+=======
+Returns a string containing the characters in the first parameter `str` starting at position `start` (zero-offset).  If `length` is specified, then the substring will contain maximum `length` characters.  If `start` is negative then it indicates the number of characters from the end of `str`.  See [substr](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr) for full definition.
+>>>>>>> 00bbb71b27e291869ce2a42e9ea963b3e6fafb5b
+
+_Example:_
+```
+$substring('Patricia Smith', 0, 3)
+```
+returns `'Pat'`
 
 ## `$substringBefore(str, chars)`
 
-Returns the substring before the first occurrence of the character sequence `chars` in `str`.  If `str` is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of `str`.  If `str` does not contain `chars`, then it returns `str`.   An error is thrown if `str` and `chars` are not strings.
+<<<<<<< HEAD
+Returns a string with all the characters of `str` converted to uppercase.  If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-#### Examples
-`$substringBefore("Hello World", " ")` => `"Hello"`
+### Examples
+`$uppercase("Hello World")` => `"HELLO WORLD"`
+=======
+Returns the substring before the first occurrence of the character sequence `chars` in `str`.  If `str` does not contain `chars`, then it returns `str`.
+>>>>>>> 00bbb71b27e291869ce2a42e9ea963b3e6fafb5b
+
+_Example:_
+```
+$substringBefore('John Smith', ' ')
+```
+returns `'John'`
 
 ## `$substringAfter(str, chars)`
 
-Returns the substring after the first occurrence of the character sequence `chars` in `str`.  If `str` is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of `str`.  If `str` does not contain `chars`, then it returns `str`.   An error is thrown if `str` and `chars` are not strings.
-
-#### Examples
-`$substringAfter("Hello World", " ")` => `"World"`
-
-
-## `$uppercase(str)`
-
-Returns a string with all the characters of `str` converted to uppercase.  If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
-
-#### Examples
-`$uppercase("Hello World")` => `"HELLO WORLD"`
-
-
-## `$lowercase(str)`
-
+<<<<<<< HEAD
 Returns a string with all the characters of `str` converted to lowercase.  If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-#### Examples
+### Examples
 `$lowercase("Hello World")` => `"hello world"`
+=======
+Returns the substring after the first occurrence of the character sequence `chars` in `str`.  If `str` does not contain `chars`, then it returns `str`.
+
+_Example:_
+```
+$substringAfter('Elizabeth Smith', ' ')
+```
+returns `'Smith'`
+>>>>>>> 00bbb71b27e291869ce2a42e9ea963b3e6fafb5b
 
 ## `trim(str)`
 
@@ -79,7 +127,7 @@ Normalizes and trims all whitespace characters in `str` by applying the followin
 
 If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-### Examples
+## Examples
 `$trim("   Hello    \n World  ")` => `"Hello World"`
 
 ## `$contains(str, pattern)`
@@ -88,7 +136,7 @@ Returns `true` if `str` is matched by `pattern`, otherwise it returns `false`. I
 
 The `pattern` parameter can either be a string or a regular expression (regex).  If it is a string, the function returns `true` if the characters within `pattern` are contained contiguously within `str`.  If it is a regex, the function will return `true` if the regex matches the contents of `str`.
 
-#### Examples
+### Examples
 `$contains("abracadabra", "bra")` => `true`
 `$contains("abracadabra", /a.*a/)` => `true`
 `$contains("abracadabra", /ar.*a/)` => `false`
@@ -104,12 +152,22 @@ The `separator` parameter can either be a string or a regular expression (regex)
 
 The optional `limit` parameter is a number that specifies the maximum number of substrings to  include in the resultant array.  Any additional substrings are discarded.  If `limit` is not  specified, then `str` is fully split with no limit to the size of the resultant array.  It is an error if `limit` is not a non-negative number. 
 
-#### Examples
+<<<<<<< HEAD
+### Examples
 `$split("so many words", " ")` => `[ "so", "many", "words" ]`
 `$split("so many words", " ", 2)` => `[ "so", "many" ]`
 `$split("too much, punctuation. hard; to read", /[ ,.;]+/)` => `["too", "much", "punctuation", "hard", "to", "read"]`
 
+## `$join(array [, separator])`
+=======
+_Example:_
+```
+$split('Julia Smith', ' ', 1)
+```
+returns `['Julia']`
+
 ## `$join(array[, separator])`
+>>>>>>> 00bbb71b27e291869ce2a42e9ea963b3e6fafb5b
 
 Joins an array of component strings into a single concatenated string with each component string separated by the optional `separator` parameter.
 
@@ -117,7 +175,8 @@ It is an error if the input array contains an item which isn't a string.
 
 If `separator` is not specified, then it is assumed to be the empty string, i.e. no separator between the component strings.  It is an error if `separator` is not a string.
 
-#### Examples
+<<<<<<< HEAD
+### Examples
 `$join(['a','b','c'])` => `"abc"`
 `$split("too much, punctuation. hard; to read", /[ ,.;]+/, 3) ~> $join(', ')` => `"too, much, punctuation"`
 
@@ -132,7 +191,7 @@ The object contains the following fields:
 
 If `str` is not specified, then the context value is used as the value of `str`.  It is an error if `str` is not a string.
 
-#### Examples
+### Examples
 `$match("ababbabbcc",/a(b+)/)` => 
 ```
 [
@@ -172,7 +231,7 @@ If the `replacement` parameter is a function, then it is invoked for each match 
 
 The optional `limit` parameter,  is a number that specifies the maximum number of replacements to make before stopping.  The remainder of the input beyond this limit will be copied to the output unchanged.
 
-#### Examples
+### Examples
 `$replace("John Smith and John Jones", "John", "Mr")` => `"Mr Smith and Mr Jones"`
 `$replace("John Smith and John Jones", "John", "Mr", 1)` => `"Mr Smith and John Jones"`
 `$replace("abracadabra", /a.*?a/, "*")` => `"*c*bra"`
@@ -185,3 +244,34 @@ The optional `limit` parameter,  is a number that specifies the maximum number o
 )
 ```
 => `"temperature = 20C today"`
+=======
+_Example:_
+```
+$join(['Kevin', 'Smith'], ' ')
+```
+returns `'Kevin Smith'`
+
+## `$length(str)`
+
+Returns the number of characters in the string `str`.  An error is thrown if `str` is not a string.
+
+_Example:_
+```
+$length('Eugene Smith')
+```
+returns `12`
+
+## `$string(arg)`
+
+Casts the `arg` parameter to a string using the following casting rules
+   - Strings are unchanged
+   - Functions are converted to an empty string
+   - Numeric infinity and NaN throw an error because they cannot be represented as a JSON number
+   - All other values are converted to a JSON string using the [JSON.stringify](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) function
+
+_Example:_
+```
+$string(123)
+```
+returns `'123'`
+>>>>>>> 00bbb71b27e291869ce2a42e9ea963b3e6fafb5b
