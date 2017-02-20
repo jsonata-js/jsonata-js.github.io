@@ -79,7 +79,7 @@ Normalizes and trims all whitespace characters in `str` by applying the followin
 
 If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-### Examples
+#### Examples
 `$trim("   Hello    \n World  ")` => `"Hello World"`
 
 ## `$contains(str, pattern)`
