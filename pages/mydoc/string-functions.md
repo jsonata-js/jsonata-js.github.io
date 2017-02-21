@@ -8,6 +8,7 @@ folder: mydoc
 ## `$string(arg)`
 
 Casts the `arg` parameter to a string using the following casting rules
+
    - Strings are unchanged
    - Functions are converted to an empty string
    - Numeric infinity and NaN throw an error because they cannot be represented as a JSON number
@@ -15,7 +16,8 @@ Casts the `arg` parameter to a string using the following casting rules
 
 If `arg` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `arg`. 
 
-#### Examples
+__Examples__
+
 `$string(5)` => `"5"`
 `[1..5].$string()` => `["1", "2", "3", "4", "5"]`
    
@@ -23,7 +25,8 @@ If `arg` is not specified (i.e. this function is invoked with no arguments), the
 
 Returns the number of characters in the string `str`.  If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-#### Examples
+__Examples__
+
 `$length("Hello World")` => `11`
 
 ## `$substring(str, start[, length])`
@@ -34,7 +37,8 @@ If `length` is specified, then the substring will contain maximum `length` chara
 
 If `start` is negative then it indicates the number of characters from the end of `str`.  See [substr](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr) for full definition.
 
-#### Examples
+__Examples__
+
 `$substring("Hello World", 3)` => `"lo World"`
 `$substring("Hello World", 3, 5)` => `"lo Wo"`
 `$substring("Hello World", -4)` => `"orld"`
@@ -44,14 +48,16 @@ If `start` is negative then it indicates the number of characters from the end o
 
 Returns the substring before the first occurrence of the character sequence `chars` in `str`.  If `str` is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of `str`.  If `str` does not contain `chars`, then it returns `str`.   An error is thrown if `str` and `chars` are not strings.
 
-#### Examples
+__Examples__
+
 `$substringBefore("Hello World", " ")` => `"Hello"`
 
 ## `$substringAfter(str, chars)`
 
 Returns the substring after the first occurrence of the character sequence `chars` in `str`.  If `str` is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of `str`.  If `str` does not contain `chars`, then it returns `str`.   An error is thrown if `str` and `chars` are not strings.
 
-#### Examples
+__Examples__
+
 `$substringAfter("Hello World", " ")` => `"World"`
 
 
@@ -59,7 +65,8 @@ Returns the substring after the first occurrence of the character sequence `char
 
 Returns a string with all the characters of `str` converted to uppercase.  If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-#### Examples
+__Examples__
+
 `$uppercase("Hello World")` => `"HELLO WORLD"`
 
 
@@ -67,19 +74,22 @@ Returns a string with all the characters of `str` converted to uppercase.  If `s
 
 Returns a string with all the characters of `str` converted to lowercase.  If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-#### Examples
+__Examples__
+
 `$lowercase("Hello World")` => `"hello world"`
 
 ## `trim(str)`
 
 Normalizes and trims all whitespace characters in `str` by applying the following steps:
+
 - All tabs, carriage returns, and line feeds are replaced with spaces.
 - Contiguous sequences of spaces are reduced to a single space.
 - Trailing and leading spaces are removed.
 
 If `str` is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of `str`.  An error is thrown if `str` is not a string.
 
-#### Examples
+__Examples__
+
 `$trim("   Hello    \n World  ")` => `"Hello World"`
 
 ## `$contains(str, pattern)`
@@ -88,7 +98,8 @@ Returns `true` if `str` is matched by `pattern`, otherwise it returns `false`. I
 
 The `pattern` parameter can either be a string or a regular expression (regex).  If it is a string, the function returns `true` if the characters within `pattern` are contained contiguously within `str`.  If it is a regex, the function will return `true` if the regex matches the contents of `str`.
 
-#### Examples
+__Examples__
+
 `$contains("abracadabra", "bra")` => `true`
 `$contains("abracadabra", /a.*a/)` => `true`
 `$contains("abracadabra", /ar.*a/)` => `false`
@@ -104,7 +115,8 @@ The `separator` parameter can either be a string or a regular expression (regex)
 
 The optional `limit` parameter is a number that specifies the maximum number of substrings to  include in the resultant array.  Any additional substrings are discarded.  If `limit` is not  specified, then `str` is fully split with no limit to the size of the resultant array.  It is an error if `limit` is not a non-negative number. 
 
-#### Examples
+__Examples__
+
 `$split("so many words", " ")` => `[ "so", "many", "words" ]`
 `$split("so many words", " ", 2)` => `[ "so", "many" ]`
 `$split("too much, punctuation. hard; to read", /[ ,.;]+/)` => `["too", "much", "punctuation", "hard", "to", "read"]`
@@ -117,7 +129,8 @@ It is an error if the input array contains an item which isn't a string.
 
 If `separator` is not specified, then it is assumed to be the empty string, i.e. no separator between the component strings.  It is an error if `separator` is not a string.
 
-#### Examples
+__Examples__
+
 `$join(['a','b','c'])` => `"abc"`
 `$split("too much, punctuation. hard; to read", /[ ,.;]+/, 3) ~> $join(', ')` => `"too, much, punctuation"`
 
@@ -126,13 +139,15 @@ If `separator` is not specified, then it is assumed to be the empty string, i.e.
 Applies the `str` string to the `pattern` regular expression and returns an array of objects, with each object containing information about each occurrence of a match withing `str`.
 
 The object contains the following fields:
+
 - `match` - the substring that was matched by the regex.
 - `index` - the offset (starting at zero) within `str` of this match.
 - `groups` - if the regex contains capturing groups (parentheses), this contains an array of strings representing each captured group.
 
 If `str` is not specified, then the context value is used as the value of `str`.  It is an error if `str` is not a string.
 
-#### Examples
+__Examples__
+
 `$match("ababbabbcc",/a(b+)/)` => 
 ```
 [
@@ -163,6 +178,7 @@ If `str` is not specified, then the context value is used as the value of `str`.
 The `pattern` parameter can either be a string or a regular expression (regex).  If it is a string, it specifies the substring(s) within `str` which should be replaced.  If it is a regex, its is used to find .
 
 The `replacement` parameter can either be a string or a function.  If it is a string, it specifies the sequence of characters that replace the substring(s) that are matched by `pattern`.  If `pattern` is a regex, then the `replacement` string can refer to the characters that were matched by the regex as well as any of the captured groups using a `S` followed by a number `N`:
+
 - If `N = 0`, then it is replaced by substring matched by the regex as a whole.
 - If `N > 0`, then it is replaced by the substring captured by the Nth parenthesised group in the regex.
 - If `N` is greater than the number of captured groups, then it is replaced by the empty string.
@@ -172,7 +188,8 @@ If the `replacement` parameter is a function, then it is invoked for each match 
 
 The optional `limit` parameter,  is a number that specifies the maximum number of replacements to make before stopping.  The remainder of the input beyond this limit will be copied to the output unchanged.
 
-#### Examples
+__Examples__
+
 `$replace("John Smith and John Jones", "John", "Mr")` => `"Mr Smith and Mr Jones"`
 `$replace("John Smith and John Jones", "John", "Mr", 1)` => `"Mr Smith and John Jones"`
 `$replace("abracadabra", /a.*?a/, "*")` => `"*c*bra"`

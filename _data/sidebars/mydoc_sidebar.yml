@@ -50,6 +50,15 @@ entries:
       url: /programming.html
       output: web, pdf
 
+  - title: Operators
+    url: /operators.html
+    output: web, pdf
+    folderitems:
+
+      - title: Operators
+        url: /operators.html
+        output: web, pdf
+
   - title: Function Library
     url: /functions.html
     output: web, pdf
