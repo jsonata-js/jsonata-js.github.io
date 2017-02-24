@@ -110,7 +110,7 @@ The modulo operator divides the RHS into the LHS using whole number division to 
 
 __Example__
 
-`5 / 2` => `1`
+`5 % 2` => `1`
 
  
 ## `=`
@@ -128,8 +128,8 @@ The equality operator returns Boolean `false` if both operands are the same (typ
 
 __Examples__
 
-`1+1 = 2` => `true`
-`"Hello" = "World"` => `false`
+`1+1 != 3` => `true`
+`"Hello" != "World"` => `true`
 
 ## `>` 
 
@@ -215,3 +215,11 @@ The `<test_expr>` expression is first evaluated.  If it evaluates to Boolean `tr
 
 __Example__
 `Price < 50 ? "Cheap" : "Expensive"`
+
+## `:=`
+
+The variable binding operator is used to bind the value of the RHS to the variable name defined on the LHS.  The variable binding is scoped to the current block and any nested blocks.  It is an error if the LHS is not a `$` followed by a valid variable name.
+
+__Examples__
+`$five := 5`
+`$square := function($n) { $n * $n }`
