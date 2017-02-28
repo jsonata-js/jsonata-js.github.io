@@ -78,7 +78,7 @@ __Examples__
 
 `$lowercase("Hello World")` => `"hello world"`
 
-## `trim(str)`
+## `$trim(str)`
 
 Normalizes and trims all whitespace characters in `str` by applying the following steps:
 
