@@ -18,7 +18,7 @@ If `arg` is not specified (i.e. this function is invoked with no arguments), the
 
 __Examples__
 
-`$string(5)` => `"5"`
+`$string(5)` => `"5"`  
 `[1..5].$string()` => `["1", "2", "3", "4", "5"]`
    
 ## `$length(str)`
@@ -39,9 +39,9 @@ If `start` is negative then it indicates the number of characters from the end o
 
 __Examples__
 
-`$substring("Hello World", 3)` => `"lo World"`
-`$substring("Hello World", 3, 5)` => `"lo Wo"`
-`$substring("Hello World", -4)` => `"orld"`
+`$substring("Hello World", 3)` => `"lo World"`  
+`$substring("Hello World", 3, 5)` => `"lo Wo"`  
+`$substring("Hello World", -4)` => `"orld"`  
 `$substring("Hello World", -4, 2)` => `"or"`
 
 ## `$substringBefore(str, chars)`
@@ -100,11 +100,11 @@ The `pattern` parameter can either be a string or a regular expression (regex). 
 
 __Examples__
 
-`$contains("abracadabra", "bra")` => `true`
-`$contains("abracadabra", /a.*a/)` => `true`
-`$contains("abracadabra", /ar.*a/)` => `false`
-`$contains("Hello World", /wo/)` => `false`
-`$contains("Hello World", /wo/i)` => `true`
+`$contains("abracadabra", "bra")` => `true`  
+`$contains("abracadabra", /a.*a/)` => `true`  
+`$contains("abracadabra", /ar.*a/)` => `false`  
+`$contains("Hello World", /wo/)` => `false`  
+`$contains("Hello World", /wo/i)` => `true`  
 `Phone[$contains(number, /^077/)]` => `{ "type": "mobile", "number": "077 7700 1234" }`
 
 ## `$split(str, separator [, limit])`
@@ -117,8 +117,8 @@ The optional `limit` parameter is a number that specifies the maximum number of 
 
 __Examples__
 
-`$split("so many words", " ")` => `[ "so", "many", "words" ]`
-`$split("so many words", " ", 2)` => `[ "so", "many" ]`
+`$split("so many words", " ")` => `[ "so", "many", "words" ]`  
+`$split("so many words", " ", 2)` => `[ "so", "many" ]`  
 `$split("too much, punctuation. hard; to read", /[ ,.;]+/)` => `["too", "much", "punctuation", "hard", "to", "read"]`
 
 ## `$join(array[, separator])`
@@ -131,7 +131,7 @@ If `separator` is not specified, then it is assumed to be the empty string, i.e.
 
 __Examples__
 
-`$join(['a','b','c'])` => `"abc"`
+`$join(['a','b','c'])` => `"abc"`  
 `$split("too much, punctuation. hard; to read", /[ ,.;]+/, 3) ~> $join(', ')` => `"too, much, punctuation"`
 
 ## `$match(str, pattern [, limit])`
@@ -190,11 +190,11 @@ The optional `limit` parameter,  is a number that specifies the maximum number o
 
 __Examples__
 
-`$replace("John Smith and John Jones", "John", "Mr")` => `"Mr Smith and Mr Jones"`
-`$replace("John Smith and John Jones", "John", "Mr", 1)` => `"Mr Smith and John Jones"`
-`$replace("abracadabra", /a.*?a/, "*")` => `"*c*bra"`
-`$replace("John Smith", /(\w+)\s(\w+)/, "$2, $1")` => `"Smith, John"`
-`$replace("265USD", /([0-9]+)USD/, "$$$1")` => `"$265"`
+`$replace("John Smith and John Jones", "John", "Mr")` => `"Mr Smith and Mr Jones"`  
+`$replace("John Smith and John Jones", "John", "Mr", 1)` => `"Mr Smith and John Jones"`  
+`$replace("abracadabra", /a.*?a/, "*")` => `"*c*bra"`  
+`$replace("John Smith", /(\w+)\s(\w+)/, "$2, $1")` => `"Smith, John"`  
+`$replace("265USD", /([0-9]+)USD/, "$$$1")` => `"$265"`  
 ```
 (
   $convert := function($m) { ($number($m.groups[0]) - 32) * 5/9 & "C" };
@@ -202,3 +202,11 @@ __Examples__
 )
 ```
 => `"temperature = 20C today"`
+
+
+## `$now()`
+
+Generates a timestamp in ISO 8601 compatible format and returns it as a string.  All invocations of `$now()` within an evaluation of an expression will all return the same timestamp value
+
+__Examples__  
+`$now()` => `"2017-05-15T15:12:59.152Z"`  

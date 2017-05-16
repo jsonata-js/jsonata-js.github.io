@@ -58,6 +58,25 @@ For example, the expression
 => `"HELLO WORLD"`
 creates a new function `$uppertrim` that performs `$trim` followed by `$uppercase`.
 
+## `^(`...`)`
+
+The order-by operator is used to sort an array of values into ascending or descending order according to one or more expressions defined within the parentheses.
+
+By default, the array will be sorted into ascending order.  For example:
+`Account.Order.Product^(Price)`  sorts all of the products into order of increasing price (`Price` is a numeric field in the `Product` object).
+
+To sort in descending order, the sort expression must be preceded by the `>` symbol. For example:
+                                                                               `Account.Order.Product^(>Price)`  sorts all of the products into order of decreasing price.  The `<` symbol can be used explicity indicate ascending order, although that is the default behaviour.
+
+Secondary (and more) sort expressions can be specified by separating them with commas (`,`).  The secondary expression will be used to determine order if the primary expression ranks two values the same.  For example,
+`Account.Order.Product^(>Price, <Quantity)` orders the products primarily by decreasing price, but for products of the same price, by increasing quantity.
+
+The sort expression(s) can be any valid JSONata expression that evaluates to a number or a string.  If it evaluates to a string then the array is sorted in order of unicode codepoint.
+ 
+__Examples__  
+`Account.Order.Product^(Price * Quantity)` => Increasing order of price times quantity.  
+`student[type='fulltime']^(DoB).name` => The names of all full time students sorted by date of birth (the DoB value is an ISO 6801 date format)
+
 
 ## `&` 
 
