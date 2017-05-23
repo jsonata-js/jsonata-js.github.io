@@ -7,14 +7,8 @@ summary: JSON query and transformation language
 ---
 
 ## Introduction
-JSONata is a lightweight query and transformation language for JSON data.
-Inspired by the 'location path' semantics of XPath 3.1, it allows sophisticated
-queries to be expressed in a compact and intuitive notation.  A rich complement of built in
-operators and functions is provided for manipulating and combining extracted
-data, and the results of queries can be formatted into any JSON output structure
-using familiar JSON object and array syntax.
-Coupled with the facility to create user defined functions, advanced expressions
-can be built to tackle any JSON query and transformation task.
+
+JSONata is a lightweight query and transformation language for JSON data. Inspired by the 'location path' semantics of XPath 3.1, it allows sophisticated queries to be expressed in a compact and intuitive notation.  A rich complement of built in operators and functions is provided for manipulating and combining extracted data, and the results of queries can be formatted into any JSON output structure using familiar JSON object and array syntax. Coupled with the facility to create user defined functions, advanced expressions can be built to tackle any JSON query and transformation task.
 
 <p><iframe width="400" height="300" src="https://www.youtube.com/embed/ZBaK40rtIBM" frameborder="0" allowfullscreen></iframe></p>
 
@@ -24,7 +18,9 @@ Try it out at [http://try.jsonata.org/](http://try.jsonata.org/)
 - `npm install jsonata`
 
 ## Usage
-In node.js:
+
+In Node.js:
+
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">jsonata</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"jsonata"</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"example"</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span><span class="s2">"value"</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s2">"value"</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span> <span class="p">{</span><span class="s2">"value"</span><span class="p">:</span> <span class="mi">13</span><span class="p">}]</span> <span class="p">};</span>
 <span class="kd">var</span> <span class="nx">expression</span> <span class="o">=</span> <span class="s2">"$sum(example.value)"</span><span class="p">;</span>
@@ -33,6 +29,7 @@ In node.js:
 </div>
 
 In a browser:
+
 <div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
@@ -57,28 +54,34 @@ In a browser:
 </div>
 
 ## Developers
-If you want to run the latest code from git, here's how to get started:
 
-2. Clone the code:
+If you want to run the latest code from Git, here's how to get started:
+
+1. Clone the code:
 
         git clone https://github.com/jsonata-js/jsonata.git
         cd jsonata
 
-3. Install the development dependencies (there are no runtime dependencies):
+2. Install the development dependencies (there are no runtime dependencies):
 
         npm install
 
-4. Run the tests
+3. Run the tests
 
         npm t
 
 
 ## Errors
 
-If an expression throws an error, e.g. syntax error or a runtime error (type error), then the object thrown
-has a consistent structure containing the column number of the error, the token that caused the error,
-and any other relevant information, including a meaningful message string.
+If an expression throws an error, e.g. syntax error or a runtime error (type error), then the object thrown has a consistent structure containing the column number of the error, the token that caused the error, and any other relevant information, including a meaningful message string.
 
 For example:
 
-`{ "position": 16, "token": "}", "value": "]", "message": "Syntax error: expected ']' got '}'" }`
+```
+{
+  "position": 16,
+  "token": "}",
+  "value": "]",
+  "message": "Syntax error: expected ']' got '}'"
+}
+```

@@ -8,16 +8,21 @@ folder: mydoc
 So far, we have introduced all the parts of the language that allow us to extract data from an input JSON document, combine the data using string and numeric operators, and format the structure of the output JSON document.  What follows are the parts that turn this into a Turing complete, functional programming language.
 
 ## Conditional expressions
+
 If/then/else constructs can be written using the ternary operator "? :".
+
 `predicate ? expr1 : expr2`
 
 The expression `predicate` is evaluated.  If its effective boolean value (see definition) is `true` then `expr1` is evaluated and returned, otherwise `expr2` is evaluated and returned.
 
 ## Parenthesized expressions and blocks
+
 Used to override the operator precedence rules.  E.g.
+
 - `(5 + 3) * 4`
 
 Used to compute complex expressions on a context value
+
 - `Product.(Price * Quantity)` - both Price and Quantity are fields of the Product value
 
 Used to support 'code blocks' - multiple expressions, separated by semicolons
@@ -27,6 +32,7 @@ Used to support 'code blocks' - multiple expressions, separated by semicolons
 Each expression in the block is evaluated _in sequential order_; the result of the last expression is returned from the block.
 
 ## Variables
+
 Any name that starts with a dollar '$' is a variable.  A variable is a named reference to a value.  The value can be one of any type in the language's type system (link).
 
 ### Built-in variables
@@ -36,6 +42,7 @@ Any name that starts with a dollar '$' is a variable.  A variable is a named ref
 - Native (built-in) functions.  See function library.
 
 ### Variable assignment
+
 Values (of any type in the type system) can be assigned to variables
 
 `$var_name := "value"`
@@ -51,12 +58,15 @@ Invoice.(
   $p * $q
 )
 ```
+
 Returns Price multiplied by Quantity for the Product in the Invoice.
 
 ## Functions
+
 The function is a first-class type, and can be stored in a variable just like any other data type.  A library of built-in functions is provided (link) and assigned to variables in the global scope.  For example, `$uppercase` contains a function which, when invoked with a string argument, `str`, will return a string with all the characters in `str` changed to uppercase.
 
 ### Invoking a function
+
 A function is invoked by following its reference (or definition) by parentheses containing a comma delimited sequence of arguments. Examples:
 
 - `$uppercase("Hello")` returns the string "HELLO".
@@ -64,6 +74,7 @@ A function is invoked by following its reference (or definition) by parentheses 
 - `$sum([1,2,3])` returns the number 6
 
 ### Defining a function
+
 Anonymous (lambda) functions can be defined using the following syntax:
 
 `function($l, $w, $h){ $l * $w * $h }`
@@ -82,6 +93,7 @@ The function can also be assigned to a variable for future use (within the block
 ```
 
 ### Recursive functions
+
 Functions that have been assigned to variables can invoke themselves using that variable reference.  This allows recursive functions to be defined.  Eg.
 
 ```
@@ -90,10 +102,12 @@ Functions that have been assigned to variables can invoke themselves using that 
   $factorial(4)
 )
 ```
+
 Note that it is actually possible to write a recursive function using purely anonymous functions (i.e. nothing gets assigned to variables).  This is done using the [Y-combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator#Fixed_point_combinators_in_lambda_calculus) which might be an interesting [diversion](#advanced-stuff) for those interested in functional programming.
 
 
 ### Higher order functions
+
 A function, being a first-class data type, can be passed as a parameter to another function, or returned from a function.  Functions that process other functions are known as higher order functions.  Consider the following example:
 
 ```
@@ -110,9 +124,11 @@ A function, being a first-class data type, can be passed as a parameter to anoth
 - Finally the function in `$add6` is invoked with the argument 7, resulting in 3 being added to it twice.  It returns 13.
 
 ### Functions are closures
+
 When a lambda function is defined, the evaluation engine takes a snapshot of the environment and stores it with the function body definition.  The environment comprises the context item (i.e. the current value in the location path) together with the current in-scope variable bindings.  When the lambda function is later invoked, it is done so in that stored environment rather than the current environment at invocation time.  This property is known as _lexical scoping_ and is a fundamental property of _closures_.
 
 Consider the following example:
+
 ```
 Account.(
   $AccName := function() { $.'Account Name' };
@@ -135,6 +151,7 @@ When the function is created, the context item (referred to by '$') is the value
 ```
 
 ### Advanced stuff
+
 There is no need to read this section - it will do nothing for your sanity or ability to manipulate JSON data.
 
 Earlier we learned how to write a recursive function to calculate the factorial of a number and hinted that this could be done without naming any functions.  We can take higher-order functions to the extreme and write the following:
@@ -151,6 +168,7 @@ The first part of this above expression is an implementation of the [Y-combinato
   [1,2,3,4,5,6,7,8,9] . $Y(λ($f) { λ($n) { $n <= 1 ? $n : $f($n-1) + $f($n-2) } }) ($)
 )
 ```
+
 to produce the Fibonacci series `[ 1, 1, 2, 3, 5, 8, 13, 21, 34 ]`.
 
 But we don't need to do any of this.  Far more sensible to use named functions:
@@ -161,4 +179,3 @@ But we don't need to do any of this.  Far more sensible to use named functions:
   [1,2,3,4,5,6,7,8,9] . $fib($)
 )
 ```
-

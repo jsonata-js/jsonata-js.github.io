@@ -19,6 +19,7 @@ Returns the value associated with `key` in `object`. If the first argument is an
 Splits an `object` containing key/value pairs into an array of objects, each of which has a single key/value pair from the input `object`.  If the parameter is an array of objects, then the resultant array contains an object for every key/value pair in every object in the supplied array.
 
 ## `$sift(object, function)`
+
 See definition under 'Higher-order functions'
 
 ## `$each(object, function)`
