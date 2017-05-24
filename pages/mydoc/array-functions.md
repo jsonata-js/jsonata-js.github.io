@@ -41,6 +41,7 @@ $sort(Account.Order.Product, function($l, $r) {
   $l.Description.Weight > $r.Description.Weight
 })
 ```
+
 This sorts the products in order of increasing weight.
 
 The sorting algorithm is *stable* which means that values within the original array which are the same according to the comparator function will remain in the original order in the sorted array.

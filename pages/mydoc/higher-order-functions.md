@@ -24,7 +24,9 @@ $map(Email.address, function($v, $i, $a) {
    'Item ' & ($i+1) & ' of ' & $count($a) & ': ' & $v
 })
 ```
+
 evaluates to:
+
 ```
 [
   "Item 1 of 4: fred.smith@my-work.com",
@@ -66,6 +68,7 @@ __Example__
   $reduce([1..5], $product)
 )
 ```
+
 This multiplies all the values together in the array `[1..5]` to return `120`.
 
 If the optional `init` parameter is supplied, then that value is used as the initial value in the aggregation (fold) process.  If not supplied, the initial value is the first value in the `array` parameter.
@@ -88,8 +91,8 @@ __Example__
 Account.Order.Product.$sift(function($v, $k) {$k ~> /^Product/})
 ```
 
-This sifts each of the `Product` objects such that they only contain the fields whose keys start with the string "Product" (using a regex).
-This example returns:
+This sifts each of the `Product` objects such that they only contain the fields whose keys start with the string "Product" (using a regex). This example returns:
+
 ```
 [
   {

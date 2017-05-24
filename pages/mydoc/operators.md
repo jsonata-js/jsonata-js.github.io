@@ -37,25 +37,32 @@ The function chaining operator is used in the situations where multiple nested f
 __Examples__
 
 `$uppercase($substringBefore($substringAfter(Customer.Email, "@"), "."))`
+
 and
+
 `$sum(Account.Order.Product.(Price * Quantity))`
 
 can be more clearly written:
 
 `Customer.Email ~> $substringAfter("@") ~> $substringBefore(".") ~> $uppercase()`
+
 and
+
 `Account.Order.Product.(Price * Quantity) ~> $sum()`
 
 This operator can also be used in a more abstract form to define new functions based on a combination of existing functions.  In this form, there is no value passed in on the LHS of the first function in the chain.
 
 For example, the expression
+
 ```
 (
   $uppertrim := $trim ~> $uppercase;
   $uppertrim("   Hello    World   ")
 )
 ```
+
 => `"HELLO WORLD"`
+
 creates a new function `$uppertrim` that performs `$trim` followed by `$uppercase`.
 
 ## `^(`...`)`
@@ -214,6 +221,7 @@ __Example__
 `library.books[price < 10 or section="diy"].title`
 
 ## `..`
+
 The sequence generation operator is used to create an array of monotonically increasing integer start with the number on the LHS and ending with the number on the RHS.  It is an error if either operand does not evaluate to an integer.  The sequence generator can only be used within an array constructor [].
 
 __Examples__
