@@ -206,7 +206,7 @@ __Examples__
 
 ## `$now()`
 
-Generates a timestamp in ISO 8601 compatible format and returns it as a string.  All invocations of `$now()` within an evaluation of an expression will all return the same timestamp value
+Generates a UTC timestamp in ISO 8601 compatible format and returns it as a string.  All invocations of `$now()` within an evaluation of an expression will all return the same timestamp value
 
 __Examples__  
 `$now()` => `"2017-05-15T15:12:59.152Z"`  
