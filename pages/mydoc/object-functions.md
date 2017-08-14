@@ -18,6 +18,10 @@ Returns the value associated with `key` in `object`. If the first argument is an
 
 Splits an `object` containing key/value pairs into an array of objects, each of which has a single key/value pair from the input `object`.  If the parameter is an array of objects, then the resultant array contains an object for every key/value pair in every object in the supplied array.
 
+## `$merge(array<object>)`
+
+Merges an array of objects into a single object containing all the key/value pairs from each of the objects in the input array.  If any of the input objects contain the same key, then the returned object will contain the value of the last one in the array.  It is an error if the input array contains an item that is not an object.
+
 ## `$sift(object, function)`
 See definition under 'Higher-order functions'
 
@@ -25,4 +29,20 @@ See definition under 'Higher-order functions'
 
 Returns an array containing the values return by the `function` when applied to each key/value pair in the `object`.
 
+The `function` parameter will get invoked with two arguments:
 
+`function(value, name)`
+
+where the `value` parameter is the value of each name/value pair in the object and `name` is its name.  The `name` parameter is optional. 
+
+__Examples__
+
+`$each(Address, function($v, $k) {$k & ": " & $v})`
+
+=>
+
+    [
+      "Street: Hursley Park",
+      "City: Winchester",
+      "Postcode: SO21 2JN"
+    ]

@@ -84,7 +84,7 @@ The following expressions yield the following results when applied to this JSON 
 |`Address.City`|`"Winchester"`| Field references separated by '.'
 |`Other.Misc`|`null`|Matched the path and returns the null value
 |`Other.Nothing`| |Path not found.  Returns Javascript _undefined_
-|`Other.'Over 18 ?'`|`true`|Field references containing whitespace or reserved tokens <br>can be enclosed in quotes (single or double)
+|``Other.`Over 18 ?` ``|`true`|Field references containing whitespace or reserved tokens <br>can be enclosed in backticks
 
 
 
@@ -273,7 +273,7 @@ Expression | Output | Comments|
 | ---------- | ------ |----|
 | `Email.address` | `[ "fred.smith@my-work.com",`<br>`"fsmith@my-work.com",`<br>`"freddy@my-social.com",`<br>`"frederic.smith@very-serious.com" ]` | The four emails addresses are returned in a flat array
 | `Email.[address]` | `[ [ "fred.smith@my-work.com",  "fsmith@my-work.com" ],`<br>`[ "freddy@my-social.com", "frederic.smith@very-serious.com" ] ]` | Each email object generates an array of addresses
-| `[Address, Other.'Alternative.Address'].City` | `[ "Winchester", "London" ]` | Selects the `City` value of both <br>`Address` and `Alternative.Address` objects
+| ``[Address, Other.`Alternative.Address`].City`` | `[ "Winchester", "London" ]` | Selects the `City` value of both <br>`Address` and `Alternative.Address` objects
 
 
 ### Object constructors

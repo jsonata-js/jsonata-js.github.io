@@ -106,3 +106,9 @@ __Examples__
 `$random()` => `0.4029142127028`  
 `$random()` => `0.6558078550072`  
 
+## `$millis()`
+
+Returns the number of milliseconds since the Unix *Epoch* (1 January, 1970 UTC) as a number.  All invocations of `$millis()` within an evaluation of an expression will all return the same value
+
+__Examples__  
+`$millis()` => `1502700297574`  

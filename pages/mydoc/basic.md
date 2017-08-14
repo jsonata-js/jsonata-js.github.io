@@ -70,7 +70,7 @@ The following expressions yield the following results when applied to this JSON 
 |`Address.City`|`"Winchester"`| Field references separated by '.'
 |`Other.Misc`|`null`|Matched the path and returns the null value
 |`Other.Nothing`| |Path not found.  Returns Javascript _undefined_
-|`Other.'Over 18 ?'`|`true`|Field references containing whitespace or reserved tokens <br>can be enclosed in quotes (single or double)
+|``Other.`Over 18 ?` ``|`true`|Field references containing whitespace or reserved tokens <br>can be enclosed in backticks
 
 
 
