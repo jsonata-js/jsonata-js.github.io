@@ -23,6 +23,7 @@ Splits an `object` containing key/value pairs into an array of objects, each of 
 Merges an array of objects into a single object containing all the key/value pairs from each of the objects in the input array.  If any of the input objects contain the same key, then the returned object will contain the value of the last one in the array.  It is an error if the input array contains an item that is not an object.
 
 ## `$sift(object, function)`
+
 See definition under 'Higher-order functions'
 
 ## `$each(object, function)`

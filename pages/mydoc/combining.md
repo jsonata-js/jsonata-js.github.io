@@ -6,6 +6,7 @@ folder: mydoc
 ---
 
 ## String expressions
+
 Path expressions that point to a string value will return that value.  Strings can be combined using the concatenation operator '&'
 
 Examples
@@ -24,6 +25,7 @@ Consider the following JSON document:
 
 
 ## Numeric expressions
+
 Path expressions that point to a number value will return that value.  Numbers can be combined using the usual mathematical operators to produce a resulting number.  Supported operators:
 - `+` addition
 - `-` subtraction
@@ -43,8 +45,9 @@ _Examples_
 
 
 ## Comparison expressions
-Often used in predicates, for comparison of two values.  Returns Boolean true or false
-Supported operators:
+
+Often used in predicates, for comparison of two values.  Returns Boolean `true` or `false`. Supported operators:
+
 - `=` equals
 - `!=` not equals
 - `<` less than
@@ -67,8 +70,9 @@ _Examples_
 | `"01962 001234" in Phone.number` | true | Value is contained in|
 
 ## Boolean expressions
-Used to combine Boolean results, often to support more sophisticated predicate expressions.
-Supported operators:
+
+Used to combine Boolean results, often to support more sophisticated predicate expressions. Supported operators:
+
 - `and`
 - `or`
 

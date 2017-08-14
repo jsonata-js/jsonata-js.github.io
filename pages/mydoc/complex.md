@@ -6,6 +6,7 @@ folder: mydoc
 ---
 
 ## Wildcards
+
 Use of `*` instead of field name to select all fields in an object
 
 | Expression | Output | Comments|
@@ -14,6 +15,7 @@ Use of `*` instead of field name to select all fields in an object
 | `*.Postcode` | `"SO21 2JN"` | Select the `Postcode` value of any child object
 
 ## Navigate arbitrary depths
+
 Descendant wildcard `**` instead of `*` will traverse all descendants (multi-level wildcard).
 
 | Expression | Output | Comments|
@@ -21,6 +23,7 @@ Descendant wildcard `**` instead of `*` will traverse all descendants (multi-lev
 | `**.Postcode` | `[ "SO21 2JN", "E1 6RF" ]` | Select all `Postcode` values, regardless of how deeply nested they are in the structure
 
 ## Predicates
+
 At any step in a location path, the selected items can be filtered using a predicate - [expr] where expr evaluates to a Boolean value.  Each item in the selection is tested against the expression, if it evaluates to true, then the item is kept; if false, it is removed from the selection. The expression is evaluated relative to the current (context) item being tested, so if the predicate expression performs navigation, then it is relative to this context item.
 
 Examples:
@@ -32,6 +35,7 @@ Examples:
 | `Phone[type='office'].number` | `[ "01962 001234",  "01962 001235" ]` | Select the office phone numbers - there are two of them!
 
 ## Singleton array and value equivalence
+
 Within a JSONata expression or subexpression, any value (which is not itself an array) and an array containing just that value are deemed to be equivalent.  This allows the language to be composable such that location paths that extract a single value from and object and location paths that extract multiple values from arrays can both be used as inputs to other expressions without needing to use different syntax for the two forms.
 
 Consider the following examples:
