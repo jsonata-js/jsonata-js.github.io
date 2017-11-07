@@ -208,14 +208,26 @@ __Examples__
 
 Generates a UTC timestamp in ISO 8601 compatible format and returns it as a string.  All invocations of `$now()` within an evaluation of an expression will all return the same timestamp value
 
-__Examples__  
-`$now()` => `"2017-05-15T15:12:59.152Z"`  
+__Examples__
+
+`$now()` => `"2017-05-15T15:12:59.152Z"`
+
+
+## `$fromMillis(number)`
+
+Convert a number representing milliseconds since the Unix *Epoch* (1 January, 1970 UTC) to a timestamp string in the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+__Examples__
+
+`$fromMillis(1510067557121)` => `"2017-11-07T15:12:37.121Z"`
+
 
 ## `$base64encode()`
 
 Converts an ASCII string to a base 64 representation. Each each character in the string is treated as a byte of binary data. This requires that all characters in the string are in the 0x00 to 0xFF range, which includes all characters in URI encoded strings. Unicode characters outside of that range are not supported.
 
 __Examples__  
+
 `$base64encode("myuser:mypass")` => `"bXl1c2VyOm15cGFzcw=="`
 
 
@@ -224,4 +236,5 @@ __Examples__
 Converts base 64 encoded bytes to a string, using a UTF-8 Unicode codepage.
 
 __Examples__  
+
 `$base64decode("bXl1c2VyOm15cGFzcw==")` => `"myuser:mypass"`
