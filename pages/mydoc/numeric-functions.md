@@ -111,4 +111,13 @@ __Examples__
 Returns the number of milliseconds since the Unix *Epoch* (1 January, 1970 UTC) as a number.  All invocations of `$millis()` within an evaluation of an expression will all return the same value
 
 __Examples__  
-`$millis()` => `1502700297574`  
+`$millis()` => `1502700297574`
+
+## `$toMillis(timestamp)`
+
+Convert a `timestamp` string in the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format to the number of milliseconds since the Unix *Epoch* (1 January, 1970 UTC) as a number.
+
+An error is thrown if the string is not in the correct format.
+
+__Examples__
+`$toMillis("2017-11-07T15:07:54.972Z")` => `1510067274972`
