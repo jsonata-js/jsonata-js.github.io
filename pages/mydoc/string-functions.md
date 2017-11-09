@@ -92,6 +92,19 @@ __Examples__
 
 `$trim("   Hello    \n World  ")` => `"Hello World"`
 
+
+## `$pad(str, width [, char])`
+
+Returns a copy of the string `str` with extra padding, if necessary, so that its total number of characters is at least the absolute value of the `width` parameter.  If `width` is a positive number, then the string is padded to the right; if negative, it is padded to the left.  The optional `char` argument specifies the padding character(s) to use.  If not specified, it defaults to the space character.
+
+__Examples__
+
+`$pad("foo", 5)` => `"foo  "`
+`$pad("foo", -5)` => `"  foo"`
+`$pad("foo", -5, "#")` => `"##foo"`
+`$formatBase(35, 2) ~> $pad(-8, '0')` => `"00100011"`
+
+
 ## `$contains(str, pattern)`
 
 Returns `true` if `str` is matched by `pattern`, otherwise it returns `false`. If `str` is not specified (i.e. this function is invoked with one argument), then the context value is used as the value of `str`.
@@ -220,6 +233,33 @@ Convert a number representing milliseconds since the Unix *Epoch* (1 January, 19
 __Examples__
 
 `$fromMillis(1510067557121)` => `"2017-11-07T15:12:37.121Z"`
+
+
+## `$formatNumber(number, picture [, options])`
+
+Casts the `number` to a string and formats it to a decimal representation as specified by the `picture` string.
+
+The behaviour of this function is consistent with the XPath/XQuery function [fn:format-number](https://www.w3.org/TR/xpath-functions-31/#func-format-number) as defined in the XPath F&O 3.1 specification.  The picture string parameter defines how the number is formatted and has the [same syntax](https://www.w3.org/TR/xpath-functions-31/#syntax-of-picture-string) as fn:format-number.
+
+The optional third argument `options` is used to override the default locale specific formatting characters such as the decimal separator.  If supplied, this argument must be an object containing name/value pairs specified in the [decimal format](https://www.w3.org/TR/xpath-functions-31/#defining-decimal-format) section of the XPath F&O 3.1 specification.
+
+__Examples__
+
+`$formatNumber(12345.6, '#,###.00')` => `"12,345.60"`
+`$formatNumber(1234.5678, "00.000e0")` => `"12.346e2"`
+`$formatNumber(34.555, "#0.00;(#0.00)")` => `"34.56"`
+`$formatNumber(-34.555, "#0.00;(#0.00)")` => `"(34.56)"`
+`$formatNumber(0.14, "01%")` => `"14%"`
+`$formatNumber(0.14, "###pm", {"per-mille": "pm"})` => `"140pm"`
+`$formatNumber(1234.5678, "①①.①①①e①", {"zero-digit": "\u245f"})` => `"①②.③④⑥e②"`
+
+
+## `$formatBase(number [, radix])`
+
+Casts the `number` to a string and formats it to an integer represented in the number base specified by the `radix` argument.  If `radix` is not specified, then it defaults to base 10.  `radix` can be between 2 and 36, otherwise an error is thrown.
+
+`$formatBase(100, 2)` => "1100100"
+`$formatBase(2555, 16)` => `"9fb"`
 
 
 ## `$base64encode()`
