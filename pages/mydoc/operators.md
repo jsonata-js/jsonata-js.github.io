@@ -84,6 +84,42 @@ __Examples__
 `Account.Order.Product^(Price * Quantity)` => Increasing order of price times quantity.  
 `student[type='fulltime']^(DoB).name` => The names of all full time students sorted by date of birth (the DoB value is an ISO 6801 date format)
 
+## `... ~> | ... | ... |`
+
+The object transform operator is used to modify a copy of an object structure using a pattern/action syntax to target specific modifications while keeping the rest of the structure unchanged.
+
+The syntax has the following structure:
+
+`head ~> | location | update [, delete] |`
+
+where
+
+- `head` evaluates to the object that is to be copied and transformed
+- `location` evaluates to the part(s) within the copied object that are to be updated. The `location` expression is evaluated relative to the result of `head`. The result of evaluating `location` must be an object or array of objects.
+- `update` evaluates to an object that is merged into the object matched by each `location`. `update` is evaluated relative to the result of `location` and if `location` matched multiple objects, then the update gets evaluated for each one of these. The result of (each) update is merged into the result of `location`.
+- `delete` (optional) evaluates to a string or an array of strings. Each string is the name of the name/value pair in each object matched by `location` that is to be removed from the resultant object.
+
+The `~>` operator is the operator for function chaining and passes the value on the left hand side to the function on the right hand side as its first argument. The expression on the right hand side must evaluate to a function, hence the `|...|...|` syntax generates a function with one argument.
+
+Example:
+`| Account.Order.Product | {'Price': Price * 1.2} |` defines a transform that will return a deep copy the object passed to it, but with the `Product` object modified such that its `Price` property has had its value increased by 20%. The first part of the expression is the path location that specifies all of the objects within the overall object to change, and the second part defines an object that will get merged into the object(s) matched by the first part. The merging semantics is the same as that of the `$merge()` function.
+
+This transform definition syntax creates a JSONata function which you can either assign to a variable and use multiple times, or invoke inline.
+Example:
+`payload ~> |Account.Order.Product|{'Price': Price * 1.2}|`
+or:
+`$increasePrice := |Account.Order.Product|{'Price': Price * 1.2}|`
+This also has the benefit that multiple transforms can be chained together for more complex transformations.
+
+In common with `$merge()`, multiple changes (inserts or updates) can be made to an object.
+Example:
+`|Account.Order.Product|{'Price': Price * 1.2, 'Total': Price * Quantity}|`
+Note that the Total will be calculated using the original price, not the modified one (JSONata is declarative not imperative).
+
+Properties can also be removed from objects.  This is done using the optional `delete` clause which specifies the name(s) of the properties to delete.
+Example:
+`$ ~> |Account.Order.Product|{'Total': Price * Quantity}, ['Price', 'Quantity']|`
+This copies the input, but for each `Product` it inserts a Total and removes the `Price` and `Quantity` properties.
 
 ## `&` 
 
