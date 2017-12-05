@@ -95,6 +95,8 @@ If no index is specified for an array (i.e. no square brackets after the field r
 | `Phone.number`| `[ "0203 544 1234", "01962 001234", "01962 001235", "077 7700 1234" ]`| No index is given to `Phone` so it selects all of <br>them (the whole array), then it selects all the `number` fields for each of them
 | `Phone.number[0]`| `[ "0203 544 1234", "01962 001234", "01962 001235", "077 7700 1234" ]`| Might expect it to just return the first number, <br>but it returns the first number of each of the items selected by `Phone`
 | `(Phone.number)[0]`| `"0203 544 1234"`| Applies the index to the array returned by `Phone.number`. One use of [parentheses](#parenthesized-expressions-and-blocks).
+| `Phone[[0..1]]`| `[{ "type": "home", "number": "0203 544 1234" },{ "type": "office", "number": "01962 001234" }]`| Returns a range of items by creating an array of indexes 
+
 
 ### Top level arrays, nested arrays and array flattening
 
