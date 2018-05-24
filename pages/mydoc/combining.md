@@ -14,7 +14,7 @@ Examples
 | Expression | Output | Comments|
 | ---------- | ------ |----|
 | <code>FirstName & ' ' & Surname</code> | `"Fred Smith"` | Concatenate `FirstName` followed by space <br>followed by `Surname`
-| <code>Address.(Street & ', ' & City)</code> | `"Hursley Park, Winchester"` | Another nice use of [parentheses](#parenthesized-expressions-and-blocks)
+| <code>Address.(Street & ', ' & City)</code> | `"Hursley Park, Winchester"` | Another nice use of [parentheses](programming.md#parenthesized-expressions-and-blocks)
 
 Consider the following JSON document:
 ``` 
