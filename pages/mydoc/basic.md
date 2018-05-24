@@ -94,7 +94,7 @@ If no index is specified for an array (i.e. no square brackets after the field r
 | `Phone[0].number`| `"0203 544 1234"`| Selects the `number` field in the first item
 | `Phone.number`| `[ "0203 544 1234", "01962 001234", "01962 001235", "077 7700 1234" ]`| No index is given to `Phone` so it selects all of <br>them (the whole array), then it selects all the `number` fields for each of them
 | `Phone.number[0]`| `[ "0203 544 1234", "01962 001234", "01962 001235", "077 7700 1234" ]`| Might expect it to just return the first number, <br>but it returns the first number of each of the items selected by `Phone`
-| `(Phone.number)[0]`| `"0203 544 1234"`| Applies the index to the array returned by `Phone.number`. One use of [parentheses](#parenthesized-expressions-and-blocks).
+| `(Phone.number)[0]`| `"0203 544 1234"`| Applies the index to the array returned by `Phone.number`. One use of [parentheses](complex.md#parenthesized-expressions-and-blocks).
 | `Phone[[0..1]]`| `[{ "type": "home", "number": "0203 544 1234" },{ "type": "office", "number": "01962 001234" }]`| Returns a range of items by creating an array of indexes 
 
 
@@ -107,12 +107,12 @@ Consider the JSON document:
       { "ref": [ 3,4 ] }
     ]
 
-At the top level, we have an array rather than an object.  If we want to select the first object in this top level array, we don't have a field name to append the `[0]` to.  We can't use `[0]` on its own because that clashes with the [array constructor](#array-constructors) syntax.  However, we can use the _context_ reference `$` to refer to the start of the document as follows:
+At the top level, we have an array rather than an object.  If we want to select the first object in this top level array, we don't have a field name to append the `[0]` to.  We can't use `[0]` on its own because that clashes with the [array constructor](construction.md#array-constructors) syntax.  However, we can use the _context_ reference `$` to refer to the start of the document as follows:
 
 | Expression | Output | Comments|
 | ---------- | ------ |----|
 | `$[0]` | `{ "ref": [ 1,2 ] }` | `$` at the start of an expression refers to the entire input document
 | `$[0].ref` | `[ 1,2 ]` | `.ref` here returns the entire internal array
 | `$[0].ref[0]` | `1` | returns element on first position of the internal array
-| `$.ref` | `[ 1, 2, 3, 4 ]` | Despite the structure of the nested array, the resultant selection<br>is flattened into a single flat array.  The original nested structure<br>of the input arrays is lost. See [Array constructors](#array-constructors) for how to<br>maintain the original structure in the results.
+| `$.ref` | `[ 1, 2, 3, 4 ]` | Despite the structure of the nested array, the resultant selection<br>is flattened into a single flat array.  The original nested structure<br>of the input arrays is lost. See [Array constructors](construction.md#array-constructors) for how to<br>maintain the original structure in the results.
 
