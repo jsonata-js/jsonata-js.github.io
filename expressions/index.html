@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Manipulating data with functions and expressions · JSONata</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;string-expressions&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#string-expressions&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;String expressions&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Manipulating data with functions and expressions · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;string-expressions&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#string-expressions&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;String expressions&lt;/h2&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Language Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul><li class="navListItem"><a class="navItem" href="/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/predicate">Predicate Queries</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul><li class="navListItem"><a class="navItem" href="/control-operators">Navigation Operators</a></li><li class="navListItem"><a class="navItem" href="/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/boolean-operators">Boolean Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul><li class="navListItem"><a class="navItem" href="/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul><li class="navListItem"><a class="navItem" href="/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/expressions.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Manipulating data with functions and expressions</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="string-expressions"></a><a href="#string-expressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>String expressions</h2>
+<p>Path expressions that point to a string value will return that value.</p>
+<p>String literals can also be created by enclosing the
+sequence of characters in quotes. Either double quotes <code>&quot;</code> or single quotes <code>'</code> can be used, provided the same quote type is
+used for the start and end of the string literal.  Single quote characters may be included within a double quoted string and
+<em>vice versa</em> withought escaping.  Characters within the string literal may be escaped using the same format
+as <a href="https://tools.ietf.org/html/rfc7159#section-7">JSON strings</a>.</p>
+<p>Strings can be combined using the concatenation operator <code>&amp;</code>. This is an infix operator and will join the two strings
+returned by the expressions either side of it.  This is the only operator that will attempt to typecast its operands to
+the expected (string) type.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><p>Concatenate <code>FirstName</code> followed by space followed by <code>Surname</code></p>
+  <div class="jsonata-ex">
+    <div>FirstName & ' ' & Surname</div>
+    <div>"Fred Smith"</div>
+  </div>
+</li>
+<li><p>Concatenates the <code>Street</code> and <code>City</code> from the <code>Address</code> object with a comma separator. Note the use of <a href="/composition#parenthesized-expressions-and-blocks">parentheses</a></p>
+  <div class="jsonata-ex">
+    <div>Address.(Street & ', ' & City)</div>
+    <div>"Hursley Park, Winchester"</div>
+  </div>
+</li>
+<li><p>Casts the operands to strings, if necessary</p>
+  <div class="jsonata-ex">
+    <div>5&0&true</div>
+    <div>"50true"</div>
+  </div>
+</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="numeric-expressions"></a><a href="#numeric-expressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Numeric expressions</h2>
+<p>Path expressions that point to a number value will return that value.</p>
+<p>Numeric literals can also be created using the same syntax as <a href="https://tools.ietf.org/html/rfc7159#section-6">JSON numbers</a>.</p>
+<p>Numbers can be combined using the usual mathematical operators to produce a resulting number.  Supported operators:</p>
+<ul>
+<li><code>+</code> addition</li>
+<li><code>-</code> subtraction</li>
+<li><code>*</code> multiplication</li>
+<li><code>/</code> division</li>
+<li><code>%</code> remainder (modulo)</li>
+</ul>
+<p><strong>Examples</strong></p>
+<p>Consider the following JSON document:</p>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"Numbers"</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2.4</span>, <span class="hljs-number">3.5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20.9</span>, <span class="hljs-number">30</span>]
+}
+</code></pre>
+<table>
+<thead>
+<tr><th>Expression</th><th>Output</th><th>Comments</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Numbers[0] + Numbers[1]</code></td><td>3.4</td><td>Adding 2 prices</td></tr>
+<tr><td><code>Numbers[0] - Numbers[4]</code></td><td>-19.9</td><td>Subtraction</td></tr>
+<tr><td><code>Numbers[0] * Numbers[5]</code></td><td>30</td><td>Multiplying price by quantity</td></tr>
+<tr><td><code>Numbers[0] / Numbers[4]</code></td><td>0.04784688995215</td><td>Division</td></tr>
+<tr><td><code>Numbers[2] % Numbers[5]</code></td><td>3.5</td><td>Modulo operator</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="comparison-expressions"></a><a href="#comparison-expressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comparison expressions</h2>
+<p>Often used in predicates, for comparison of two values.  Returns Boolean <code>true</code> or <code>false</code>. Supported operators:</p>
+<ul>
+<li><code>=</code> equals</li>
+<li><code>!=</code> not equals</li>
+<li><code>&lt;</code> less than</li>
+<li><code>&lt;=</code> less than or equal</li>
+<li><code>&gt;</code> greater than</li>
+<li><code>&gt;=</code> greater than or equal</li>
+<li><code>in</code> value is contained in an array</li>
+</ul>
+<p><strong>Examples</strong></p>
+<table>
+<thead>
+<tr><th>Expression</th><th>Output</th><th>Comments</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Numbers[0] = Numbers[5]</code></td><td>false</td><td>Equality</td></tr>
+<tr><td><code>Numbers[0] != Numbers[4]</code></td><td>true</td><td>Inequality</td></tr>
+<tr><td><code>Numbers[1] &lt; Numbers[5]</code></td><td>true</td><td>Less than</td></tr>
+<tr><td><code>Numbers[1] &lt;= Numbers[5]</code></td><td>true</td><td>Less than or equal</td></tr>
+<tr><td><code>Numbers[2] &gt; Numbers[4]</code></td><td>false</td><td>Greater than</td></tr>
+<tr><td><code>Numbers[2] &gt;= Numbers[4]</code></td><td>false</td><td>Greater than or equal</td></tr>
+<tr><td><code>&quot;01962 001234&quot; in Phone.number</code></td><td>true</td><td>Value is contained in</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="boolean-expressions"></a><a href="#boolean-expressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Boolean expressions</h2>
+<p>Used to combine Boolean results, often to support more sophisticated predicate expressions. Supported operators:</p>
+<ul>
+<li><code>and</code></li>
+<li><code>or</code></li>
+</ul>
+<p>Note that <code>not</code> is supported as a function, not an operator.</p>
+<p><strong>Examples</strong></p>
+<table>
+<thead>
+<tr><th>Expression</th><th>Output</th><th>Comments</th></tr>
+</thead>
+<tbody>
+<tr><td><code>(Numbers[2] != 0) and (Numbers[5] != Numbers[1])</code></td><td>true</td><td><code>and</code> operator</td></tr>
+<tr><td><code>(Numbers[2] != 0) or (Numbers[5] = Numbers[1])</code></td><td>true</td><td><code>or</code> operator</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/predicate"><span class="arrow-prev">← </span><span>Predicate Queries</span></a><a class="docs-next button" href="/construction"><span>Result Structures</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#string-expressions">String expressions</a></li><li><a href="#numeric-expressions">Numeric expressions</a></li><li><a href="#comparison-expressions">Comparison expressions</a></li><li><a href="#boolean-expressions">Boolean expressions</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 JSONata.org</section></footer></div></body></html>

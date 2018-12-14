@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Building result structures · JSONata</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;So far, we have discovered how to extract values from a JSON document, and how to manipulate the data using numeric, string and other operators.  It is useful to be able to specify how this processed data is presented in the output.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Building result structures · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/index.html"/><meta property="og:description" content="&lt;p&gt;So far, we have discovered how to extract values from a JSON document, and how to manipulate the data using numeric, string and other operators.  It is useful to be able to specify how this processed data is presented in the output.&lt;/p&gt;
+"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Language Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul><li class="navListItem"><a class="navItem" href="/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/expressions">Functions and Expressions</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul><li class="navListItem"><a class="navItem" href="/control-operators">Navigation Operators</a></li><li class="navListItem"><a class="navItem" href="/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/boolean-operators">Boolean Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul><li class="navListItem"><a class="navItem" href="/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul><li class="navListItem"><a class="navItem" href="/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/construction.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Building result structures</h1></header><article><div><span><p>So far, we have discovered how to extract values from a JSON document, and how to manipulate the data using numeric, string and other operators.  It is useful to be able to specify how this processed data is presented in the output.</p>
+<h2><a class="anchor" aria-hidden="true" id="array-constructors"></a><a href="#array-constructors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Array constructors</h2>
+<p>As previously observed, when a location path matches multiple values in the input document, these values are returned as an array.  The values might be objects or arrays, and as such will have their own structure, but the <em>matched values</em> themselves are at the top level in the resultant array.</p>
+<p>It is possible to build extra structure into the resultant array by specifying the construction of arrays (or <a href="#object-constructors">objects</a>) within the location path expression.  At any point in a location path where a field reference is expected, a pair of square brackets <code>[]</code> can be inserted to specify that the results of the expression within those brackets should be contained within a new array in the output.  Commas are used to separate multiple expressions within the array constructor.</p>
+<p>Array constructors can also be used within location paths for making multiple selections without the broad brush use of wildcards.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><p>The four emails addresses are returned in a flat array.</p>
+  <div class="jsonata-ex">
+    <div>Email.address</div>
+    <div>[
+  "fred.smith@my-work.com",
+  "fsmith@my-work.com",
+  "freddy@my-social.com",
+  "frederic.smith@very-serious.com"
+]</div>
+  </div>
+</li>
+<li><p>Each email object generates an array of addresses.</p>
+  <div class="jsonata-ex">
+    <div>Email.[address]</div>
+    <div>[
+  [ "fred.smith@my-work.com",  "fsmith@my-work.com" ],
+  [ "freddy@my-social.com", "frederic.smith@very-serious.com" ]
+]</div>
+  </div>
+</li>
+<li><p>Selects the <code>City</code> value of both <code>Address</code> and <code>Alternative.Address</code> objects.</p>
+  <div class="jsonata-ex">
+    <div>[Address, Other.`Alternative.Address`].City</div>
+    <div>[ "Winchester", "London" ]</div>
+  </div>
+</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="object-constructors"></a><a href="#object-constructors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Object constructors</h2>
+<p>In a similar manner to the way arrays can be constructed, JSON objects can also be constructed in the output.  At any point in a location path where a field reference is expected, a pair of braces <code>{}</code> containing key/value pairs separated by commas, with each key and value separated by a colon: <code>{key1: value2, key2:value2}</code>.  The keys and values can either be literals or can be expressions. The key must either be a string or an expression that evaluates to a string.</p>
+<p>When an object constructor follows an expression that selects multiple values, the object constructor will create a single object that contains a key/value pair for each of those context values.  If an array of objects is required (one for each context value), then the object constructor should immediately follow the dot '.' operator.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><p>Produces an array of objects (one for each phone).</p>
+  <div class="jsonata-ex">
+    <div>Phone.{type: number}</div>
+    <div>[
+  { "home": "0203 544 1234" }, 
+  { "office": "01962 001234" }, 
+  { "office": "01962 001235" }, 
+  { "mobile": "077 7700 1234"  } 
+]</div>
+  </div>
+</li>
+<li><p>Combines the key/value pairs into a single object.  See <a href="/sorting-grouping">Grouping using object key expression</a> for more details.</p>
+  <div class="jsonata-ex">
+    <div>Phone{type: number}</div>
+    <div>{
+  "home": "0203 544 1234",
+  "office": [
+    "01962 001234",
+    "01962 001235"
+  ],
+  "mobile": "077 7700 1234"
+}</div>
+  </div>
+</li>
+<li><p>Combines the key/value pairs into a single object.  In this case, for consistency, all numbers are grouped into arrays. See <a href="/predicate#singleton-array-and-value-equivalence">Singleton array and value equivalence</a> for more details.</p>
+  <div class="jsonata-ex">
+    <div>Phone{type: number[]}</div>
+    <div>{
+  "home": [
+    "0203 544 1234"
+  ],
+  "office": [
+    "01962 001234",
+    "01962 001235"
+  ],
+  "mobile": [
+    "077 7700 1234"
+  ]
+}</div>
+  </div>
+</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="json-literals"></a><a href="#json-literals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON literals</h2>
+<p>The array and object constructors use the standard JSON syntax for JSON arrays and JSON objects.  In addition to this values of the other JSON data types can be entered into an expression using their native JSON syntax:</p>
+<ul>
+<li>strings - <code>&quot;hello world&quot;</code></li>
+<li>numbers - <code>34.5</code></li>
+<li>Booleans - <code>true</code> or <code>false</code></li>
+<li>nulls - <code>null</code></li>
+<li>objects - <code>{&quot;key1&quot;: &quot;value1&quot;, &quot;key2&quot;: &quot;value2&quot;}</code></li>
+<li>arrays - <code>[&quot;value1&quot;, &quot;value2&quot;]</code></li>
+</ul>
+<p><strong>JSONata is a superset of JSON.</strong> This means that any valid JSON document is also a valid JSONata expression.  This property allows you to use a JSON document as a template for the desired output, and then replace parts of it with expressions to insert data into the output from the input document.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/expressions"><span class="arrow-prev">← </span><span>Functions and Expressions</span></a><a class="docs-next button" href="/composition"><span>Query Composition</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#array-constructors">Array constructors</a></li><li><a href="#object-constructors">Object constructors</a></li><li><a href="#json-literals">JSON literals</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 JSONata.org</section></footer></div></body></html>
