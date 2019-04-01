@@ -161,7 +161,7 @@
 <p>Casts the <code>number</code> to a string and formats it to an integer represented in the number base specified by the <code>radix</code> argument.  If <code>radix</code> is not specified, then it defaults to base 10.  <code>radix</code> can be between 2 and 36, otherwise an error is thrown.</p>
 <p><strong>Examples</strong></p>
 <ul>
-<li><code>$formatBase(100, 2)</code> =&gt; <code>&quot;1100100&quot;</code></li>
+<li><code>$formatBase(100, 2)</code> =&gt; &quot;1100100&quot;</li>
 <li><code>$formatBase(2555, 16)</code> =&gt; <code>&quot;9fb&quot;</code></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="formatinteger"></a><a href="#formatinteger" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$formatInteger()</code></h2>
@@ -170,8 +170,7 @@
 <p>The behaviour of this function is consistent with the two-argument version of the XPath/XQuery function <a href="https://www.w3.org/TR/xpath-functions-31/#func-format-integer">fn:format-integer</a> as defined in the XPath F&amp;O 3.1 specification.  The picture string parameter defines how the number is formatted and has the same syntax as fn:format-integer.</p>
 <p><strong>Examples</strong></p>
 <ul>
-<li><code>$formatInteger(2789, 'w')</code> =&gt; <code>&quot;two thousand, seven hundred and eighty-nine&quot;</code></li>
-<li><code>$formatInteger(1999, 'I')</code> =&gt; <code>&quot;MCMXCIX&quot;</code></li>
+<li></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="parseinteger"></a><a href="#parseinteger" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$parseInteger()</code></h2>
 <p><strong>Signature:</strong> <code>$parseInteger(string, picture)</code></p>
@@ -180,7 +179,6 @@ The picture string parameter has the same format as <code>$formatInteger</code>.
 function for parsing integers, this capability has been added to JSONata.</p>
 <p><strong>Examples</strong></p>
 <ul>
-<li><code>$parseInteger(&quot;twelve thousand, four hundred and seventy-six&quot;, 'w')</code> =&gt; <code>12476</code></li>
-<li><code>$parseInteger('12,345,678', '#,##0')</code> =&gt; <code>12345678</code></li>
+<li></li>
 </ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/string-functions"><span class="arrow-prev">← </span><span>String Functions</span></a><a class="docs-next button" href="/aggregation-functions"><span>Aggregation Functions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#number"><code>$number()</code></a></li><li><a href="#abs"><code>$abs()</code></a></li><li><a href="#floor"><code>$floor()</code></a></li><li><a href="#ceil"><code>$ceil()</code></a></li><li><a href="#round"><code>$round()</code></a></li><li><a href="#power"><code>$power()</code></a></li><li><a href="#sqrt"><code>$sqrt()</code></a></li><li><a href="#random"><code>$random()</code></a></li><li><a href="#formatnumber"><code>$formatNumber()</code></a></li><li><a href="#formatbase"><code>$formatBase()</code></a></li><li><a href="#formatinteger"><code>$formatInteger()</code></a></li><li><a href="#parseinteger"><code>$parseInteger()</code></a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 JSONata.org</section></footer></div></body></html>
