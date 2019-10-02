@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Navigation Operators · JSONata</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Operators are a set of symbols that implement commonly used functions and are easier to read that an equivalent notation that just used function syntax.  Most operators act on two values, placed on the left-hand side (LHS) and right-hand side (RHS) of the operator.  Expressions containing operators can be ready chained, the order in which they are evaluated is determined by their relative precedence."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Navigation Operators · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/"/><meta property="og:description" content="Operators are a set of symbols that implement commonly used functions and are easier to read that an equivalent notation that just used function syntax.  Most operators act on two values, placed on the left-hand side (LHS) and right-hand side (RHS) of the operator.  Expressions containing operators can be ready chained, the order in which they are evaluated is determined by their relative precedence."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Operators</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/control-operators">Navigation Operators</a></li><li class="navListItem"><a class="navItem" href="/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/boolean-operators">Boolean Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul class=""><li class="navListItem"><a class="navItem" href="/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/control-operators.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Navigation Operators</h1></header><article><div><span><p>Operators are a set of symbols that implement commonly used functions and are easier to read that an equivalent notation that just used function syntax.  Most operators act on two values, placed on the left-hand side (LHS) and right-hand side (RHS) of the operator.  Expressions containing operators can be ready chained, the order in which they are evaluated is determined by their relative precedence.</p>
+<h2><a class="anchor" aria-hidden="true" id="map"></a><a href="#map" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>.</code> (Map)</h2>
+<p>The dot operator is one of the fundamental building blocks in JSONata expressions.  It implements the 'for each' or 'map' function that is common in many functional languages.</p>
+<p>The dot operator performs the following logic:</p>
+<ul>
+<li>The expression on the LHS is evaluated to produce an array of values.
+- If it evaluates to a single value, that is treated as equivalent to an array containing that single value
+- If it evaluates to nothing (no match or empty array), then the result of the operator expression is nothing</li>
+<li>For each value in the LHS array in turn:
+- The value is known as the <em>context</em> and is used as the basis for any relative path expression on the RHS.  It is also accessible in the RHS expression using the <code>$</code> symbol.
+- The RHS expression is evaluated to produce a value or array of values (or nothing).  These values are appended to a combined array of results for the operator as a whole.</li>
+<li>The combined result of the operator is returned.</li>
+</ul>
+<p>This operator is left associative meaning that the expression <code>a.b.c.d</code> is evaluated like <code>((a.b).c).d</code>; i.e. left to right</p>
+<p><strong>Examples</strong></p>
+<p><code>Address.City</code> =&gt; <code>&quot;Winchester&quot;</code>   <br>
+<code>Phone.number</code> =&gt; <code>[ &quot;0203 544 1234&quot;, &quot;01962 001234&quot;, &quot;01962 001235&quot;, &quot;077 7700 1234&quot; ]</code>   <br>
+<code>Account.Order.Product.(Price * Quantity)</code> =&gt; <code>[ 68.9, 21.67, 137.8, 107.99 ]</code>   <br>
+<code>Account.Order.OrderID.$uppercase()</code> =&gt; <code>[ &quot;ORDER103&quot;, &quot;ORDER104&quot;]</code></p>
+<h2><a class="anchor" aria-hidden="true" id="filter"></a><a href="#filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>[...]</code> (Filter)</h2>
+<h2><a class="anchor" aria-hidden="true" id="chain"></a><a href="#chain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>~&gt;</code> (Chain)</h2>
+<p>The function chaining operator is used in the situations where multiple nested functions need to be applied to a value, while making it easy to read. The value on the LHS is evaluated, then passed into the function on the RHS as its first argument.  If the function has any other arguments, then these are passed to the function in parenthesis as usual.  It is an error if the RHS is not a function, or an expression that evaluates to a function.</p>
+<p><strong>Examples</strong></p>
+<p><code>$uppercase($substringBefore($substringAfter(Customer.Email, &quot;@&quot;), &quot;.&quot;))</code></p>
+<p>and</p>
+<p><code>$sum(Account.Order.Product.(Price * Quantity))</code></p>
+<p>can be more clearly written:</p>
+<p><code>Customer.Email ~&gt; $substringAfter(&quot;@&quot;) ~&gt; $substringBefore(&quot;.&quot;) ~&gt; $uppercase()</code></p>
+<p>and</p>
+<p><code>Account.Order.Product.(Price * Quantity) ~&gt; $sum()</code></p>
+<p>This operator can also be used in a more abstract form to define new functions based on a combination of existing functions.  In this form, there is no value passed in on the LHS of the first function in the chain.</p>
+<p>For example, the expression</p>
+<pre><code class="hljs">(
+  <span class="hljs-symbol">$uppertrim</span> := <span class="hljs-symbol">$trim</span> ~&gt; <span class="hljs-symbol">$upper</span>case;
+  <span class="hljs-symbol">$uppertrim</span>(<span class="hljs-string">"   Hello    World   "</span>)
+)
+</code></pre>
+<p>=&gt; <code>&quot;HELLO WORLD&quot;</code></p>
+<p>creates a new function <code>$uppertrim</code> that performs <code>$trim</code> followed by <code>$uppercase</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="order-by"></a><a href="#order-by" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>^(</code>...<code>)</code> (Order-by)</h2>
+<p>The order-by operator is used to sort an array of values into ascending or descending order according to one or more expressions defined within the parentheses.</p>
+<p>By default, the array will be sorted into ascending order.  For example:</p>
+<p><code>Account.Order.Product^(Price)</code></p>
+<p>sorts all of the products into order of increasing price (<code>Price</code> is a numeric field in the <code>Product</code> object).</p>
+<p>To sort in descending order, the sort expression must be preceded by the <code>&gt;</code> symbol. For example:</p>
+<p><code>Account.Order.Product^(&gt;Price)</code></p>
+<p>sorts all of the products into order of decreasing price.  The <code>&lt;</code> symbol can be used explicity indicate ascending order, although that is the default behaviour.</p>
+<p>Secondary (and more) sort expressions can be specified by separating them with commas (<code>,</code>).  The secondary expression will be used to determine order if the primary expression ranks two values the same.  For example,</p>
+<p><code>Account.Order.Product^(&gt;Price, &lt;Quantity)</code></p>
+<p>orders the products primarily by decreasing price, but for products of the same price, by increasing quantity.</p>
+<p>The sort expression(s) can be any valid JSONata expression that evaluates to a number or a string.  If it evaluates to a string then the array is sorted in order of unicode codepoint.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>Account.Order.Product^(Price * Quantity)</code> =&gt; Increasing order of price times quantity.</li>
+<li><code>student[type='fulltime']^(DoB).name</code> =&gt; The names of all full time students sorted by date of birth (the DoB value is an ISO 8601 date format)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="transform-"></a><a href="#transform-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>... ~&gt; | ... | ... |</code> (Transform)</h2>
+<p>The object transform operator is used to modify a copy of an object structure using a pattern/action syntax to target specific modifications while keeping the rest of the structure unchanged.</p>
+<p>The syntax has the following structure:</p>
+<p><code>head ~&gt; | location | update [, delete] |</code></p>
+<p>where</p>
+<ul>
+<li><code>head</code> evaluates to the object that is to be copied and transformed</li>
+<li><code>location</code> evaluates to the part(s) within the copied object that are to be updated. The <code>location</code> expression is evaluated relative to the result of <code>head</code>. The result of evaluating <code>location</code> must be an object or array of objects.</li>
+<li><code>update</code> evaluates to an object that is merged into the object matched by each <code>location</code>. <code>update</code> is evaluated relative to the result of <code>location</code> and if <code>location</code> matched multiple objects, then the update gets evaluated for each one of these. The result of (each) update is merged into the result of <code>location</code>.</li>
+<li><code>delete</code> (optional) evaluates to a string or an array of strings. Each string is the name of the name/value pair in each object matched by <code>location</code> that is to be removed from the resultant object.</li>
+</ul>
+<p>The <code>~&gt;</code> operator is the operator for function chaining and passes the value on the left hand side to the function on the right hand side as its first argument. The expression on the right hand side must evaluate to a function, hence the <code>|...|...|</code> syntax generates a function with one argument.</p>
+<p>Example:</p>
+<p><code>| Account.Order.Product | {'Price': Price * 1.2} |</code></p>
+<p>defines a transform that will return a deep copy the object passed to it, but with the <code>Product</code> object modified such that its <code>Price</code> property has had its value increased by 20%. The first part of the expression is the path location that specifies all of the objects within the overall object to change, and the second part defines an object that will get merged into the object(s) matched by the first part. The merging semantics is the same as that of the <code>$merge()</code> function.</p>
+<p>This transform definition syntax creates a JSONata function which you can either assign to a variable and use multiple times, or invoke inline.
+Example:</p>
+<p><code>payload ~&gt; |Account.Order.Product|{'Price': Price * 1.2}|</code></p>
+<p>or:</p>
+<p><code>$increasePrice := |Account.Order.Product|{'Price': Price * 1.2}|</code></p>
+<p>This also has the benefit that multiple transforms can be chained together for more complex transformations.</p>
+<p>In common with <code>$merge()</code>, multiple changes (inserts or updates) can be made to an object.
+Example:</p>
+<p><code>|Account.Order.Product|{'Price': Price * 1.2, 'Total': Price * Quantity}|</code></p>
+<p>Note that the Total will be calculated using the original price, not the modified one (JSONata is declarative not imperative).</p>
+<p>Properties can also be removed from objects.  This is done using the optional <code>delete</code> clause which specifies the name(s) of the properties to delete.
+Example:</p>
+<p><code>$ ~&gt; |Account.Order.Product|{'Total': Price * Quantity}, ['Price', 'Quantity']|</code></p>
+<p>This copies the input, but for each <code>Product</code> it inserts a Total and removes the <code>Price</code> and <code>Quantity</code> properties.</p>
+<h2><a class="anchor" aria-hidden="true" id="concatenation"></a><a href="#concatenation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&amp;</code> (Concatenation)</h2>
+<p>The string concatenation operator is used to join the string values of the operands into a single resultant string.  If either or both of the operands are not strings, then they are first cast to string using the rules of the <code>$string</code> function.</p>
+<p><strong>Example</strong></p>
+<p><code>&quot;Hello&quot; &amp; &quot;World&quot;</code> =&gt; <code>&quot;HelloWorld&quot;</code></p>
+<h2><a class="anchor" aria-hidden="true" id="conditional"></a><a href="#conditional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>? :</code> (Conditional)</h2>
+<p>The conditional ternary operator is used to evaluate one of two alternative expressions based on the result of a predicate (test) condition.  The operator takes the form:</p>
+<p><code>&lt;test_expr&gt; ? &lt;expr_T&gt; : &lt;expr_F&gt;</code></p>
+<p>The <code>&lt;test_expr&gt;</code> expression is first evaluated.  If it evaluates to Boolean <code>true</code>, then the operator returns the result of evaluating the <code>&lt;expr_T&gt;</code> expression.  Otherwise it returns the result of evaluating the <code>&lt;expr_F&gt;</code> expression. If <code>&lt;test_expr&gt;</code> evaluates to a non-Boolean value, then the value is first cast to Boolean using the rules of the <code>$boolean</code> function.</p>
+<p><strong>Example</strong></p>
+<p><code>Price &lt; 50 ? &quot;Cheap&quot; : &quot;Expensive&quot;</code></p>
+<h2><a class="anchor" aria-hidden="true" id="variable-binding"></a><a href="#variable-binding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:=</code> (Variable binding)</h2>
+<p>The variable binding operator is used to bind the value of the RHS to the variable name defined on the LHS.  The variable binding is scoped to the current block and any nested blocks.  It is an error if the LHS is not a <code>$</code> followed by a valid variable name.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$five := 5</code></li>
+<li><code>$square := function($n) { $n * $n }</code></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/date-time"><span class="arrow-prev">← </span><span>Date/Time Processing</span></a><a class="docs-next button" href="/numeric-operators"><span>Numeric Operators</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#map"><code>.</code> (Map)</a></li><li><a href="#filter"><code>[...]</code> (Filter)</a></li><li><a href="#gt-chain"><code>~&gt;</code> (Chain)</a></li><li><a href="#order-by"><code>^(</code>...<code>)</code> (Order-by)</a></li><li><a href="#gt-transform-"><code>... ~&gt; | ... | ... |</code> (Transform)</a></li><li><a href="#amp-concatenation"><code>&amp;</code> (Concatenation)</a></li><li><a href="#conditional"><code>? :</code> (Conditional)</a></li><li><a href="#variable-binding"><code>:=</code> (Variable binding)</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 JSONata.org</section></footer></div></body></html>
