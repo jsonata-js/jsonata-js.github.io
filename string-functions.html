@@ -209,7 +209,7 @@
 <p>Finds occurrences of <code>pattern</code> within <code>str</code> and replaces them with <code>replacement</code>.</p>
 <p>If <code>str</code> is not specified, then the context value is used as the value of <code>str</code>.  It is an error if <code>str</code> is not a string.</p>
 <p>The <code>pattern</code> parameter can either be a string or a regular expression (regex).  If it is a string, it specifies the substring(s) within <code>str</code> which should be replaced.  If it is a regex, its is used to find .</p>
-<p>The <code>replacement</code> parameter can either be a string or a function.  If it is a string, it specifies the sequence of characters that replace the substring(s) that are matched by <code>pattern</code>.  If <code>pattern</code> is a regex, then the <code>replacement</code> string can refer to the characters that were matched by the regex as well as any of the captured groups using a <code>S</code> followed by a number <code>N</code>:</p>
+<p>The <code>replacement</code> parameter can either be a string or a function.  If it is a string, it specifies the sequence of characters that replace the substring(s) that are matched by <code>pattern</code>.  If <code>pattern</code> is a regex, then the <code>replacement</code> string can refer to the characters that were matched by the regex as well as any of the captured groups using a <code>$</code> followed by a number <code>N</code>:</p>
 <ul>
 <li>If <code>N = 0</code>, then it is replaced by substring matched by the regex as a whole.</li>
 <li>If <code>N &gt; 0</code>, then it is replaced by the substring captured by the Nth parenthesised group in the regex.</li>
