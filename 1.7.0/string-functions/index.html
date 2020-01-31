@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>String functions · JSONata</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## `$string()`"/><meta name="docsearch:version" content="1.7.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="String functions · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/"/><meta property="og:description" content="## `$string()`"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><a href="/versions"><h3>1.7.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/1.7.0/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Function Library</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.7.0/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.7.0/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.7.0/path-operators">Path Operators</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/boolean-operators">Boolean Operators</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/other-operators">Other Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/1.7.0/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.7.0/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/1.7.0/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/string-functions.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">String functions</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="string"></a><a href="#string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$string()</code></h2>
+<p><strong>Signature:</strong> <code>$string(arg, prettify)</code></p>
+<p>Casts the <code>arg</code> parameter to a string using the following casting rules</p>
+<ul>
+<li>Strings are unchanged</li>
+<li>Functions are converted to an empty string</li>
+<li>Numeric infinity and NaN throw an error because they cannot be represented as a JSON number</li>
+<li>All other values are converted to a JSON string using the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a> function</li>
+</ul>
+<p>If <code>arg</code> is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of <code>arg</code>.</p>
+<p>If <code>prettify</code> is true, then &quot;prettified&quot; JSON is produced. i.e One line per field and lines will be indented based on the field depth.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$string(5)</code> =&gt; <code>&quot;5&quot;</code></li>
+<li><code>[1..5].$string()</code> =&gt; <code>[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="length"></a><a href="#length" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$length()</code></h2>
+<p><strong>Signature:</strong> <code>$length(str)</code></p>
+<p>Returns the number of characters in the string <code>str</code>.  If <code>str</code> is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of <code>str</code>.  An error is thrown if <code>str</code> is not a string.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$length(&quot;Hello World&quot;)</code> =&gt; <code>11</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="substring"></a><a href="#substring" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$substring()</code></h2>
+<p><strong>Signature:</strong> <code>$substring(str, start[, length])</code></p>
+<p>Returns a string containing the characters in the first parameter <code>str</code> starting at position <code>start</code> (zero-offset).  If <code>str</code> is not specified (i.e. this function is invoked with only the numeric argument(s)), then the context value is used as the value of <code>str</code>.  An error is thrown if <code>str</code> is not a string.</p>
+<p>If <code>length</code> is specified, then the substring will contain maximum <code>length</code> characters.</p>
+<p>If <code>start</code> is negative then it indicates the number of characters from the end of <code>str</code>.  See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr">substr</a> for full definition.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$substring(&quot;Hello World&quot;, 3)</code> =&gt; <code>&quot;lo World&quot;</code></li>
+<li><code>$substring(&quot;Hello World&quot;, 3, 5)</code> =&gt; <code>&quot;lo Wo&quot;</code></li>
+<li><code>$substring(&quot;Hello World&quot;, -4)</code> =&gt; <code>&quot;orld&quot;</code></li>
+<li><code>$substring(&quot;Hello World&quot;, -4, 2)</code> =&gt; <code>&quot;or&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="substringbefore"></a><a href="#substringbefore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$substringBefore()</code></h2>
+<p><strong>Signature:</strong> <code>$substringBefore(str, chars)</code></p>
+<p>Returns the substring before the first occurrence of the character sequence <code>chars</code> in <code>str</code>.  If <code>str</code> is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of <code>str</code>.  If <code>str</code> does not contain <code>chars</code>, then it returns <code>str</code>.   An error is thrown if <code>str</code> and <code>chars</code> are not strings.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$substringBefore(&quot;Hello World&quot;, &quot; &quot;)</code> =&gt; <code>&quot;Hello&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="substringafter"></a><a href="#substringafter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$substringAfter()</code></h2>
+<p><strong>Signature:</strong> <code>$substringAfter(str, chars)</code></p>
+<p>Returns the substring after the first occurrence of the character sequence <code>chars</code> in <code>str</code>.  If <code>str</code> is not specified (i.e. this function is invoked with only one argument), then the context value is used as the value of <code>str</code>.  If <code>str</code> does not contain <code>chars</code>, then it returns <code>str</code>.   An error is thrown if <code>str</code> and <code>chars</code> are not strings.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$substringAfter(&quot;Hello World&quot;, &quot; &quot;)</code> =&gt; <code>&quot;World&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="uppercase"></a><a href="#uppercase" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$uppercase()</code></h2>
+<p><strong>Signature:</strong> <code>$uppercase(str)</code></p>
+<p>Returns a string with all the characters of <code>str</code> converted to uppercase.  If <code>str</code> is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of <code>str</code>.  An error is thrown if <code>str</code> is not a string.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$uppercase(&quot;Hello World&quot;)</code> =&gt; <code>&quot;HELLO WORLD&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="lowercase"></a><a href="#lowercase" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$lowercase()</code></h2>
+<p><strong>Signature:</strong> <code>$lowercase(str)</code></p>
+<p>Returns a string with all the characters of <code>str</code> converted to lowercase.  If <code>str</code> is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of <code>str</code>.  An error is thrown if <code>str</code> is not a string.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$lowercase(&quot;Hello World&quot;)</code> =&gt; <code>&quot;hello world&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="trim"></a><a href="#trim" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$trim()</code></h2>
+<p><strong>Signature:</strong> <code>$trim(str)</code></p>
+<p>Normalizes and trims all whitespace characters in <code>str</code> by applying the following steps:</p>
+<ul>
+<li>All tabs, carriage returns, and line feeds are replaced with spaces.</li>
+<li>Contiguous sequences of spaces are reduced to a single space.</li>
+<li>Trailing and leading spaces are removed.</li>
+</ul>
+<p>If <code>str</code> is not specified (i.e. this function is invoked with no arguments), then the context value is used as the value of <code>str</code>.  An error is thrown if <code>str</code> is not a string.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$trim(&quot; Hello \n World &quot;)</code> =&gt; <code>&quot;Hello World&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="pad"></a><a href="#pad" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$pad()</code></h2>
+<p><strong>Signature:</strong> <code>$pad(str, width [, char])</code></p>
+<p>Returns a copy of the string <code>str</code> with extra padding, if necessary, so that its total number of characters is at least the absolute value of the <code>width</code> parameter.  If <code>width</code> is a positive number, then the string is padded to the right; if negative, it is padded to the left.  The optional <code>char</code> argument specifies the padding character(s) to use.  If not specified, it defaults to the space character.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$pad(&quot;foo&quot;, 5)</code> =&gt; <code>&quot;foo &quot;</code></li>
+<li><code>$pad(&quot;foo&quot;, -5)</code> =&gt; <code>&quot; foo&quot;</code></li>
+<li><code>$pad(&quot;foo&quot;, -5, &quot;#&quot;)</code> =&gt; <code>&quot;##foo&quot;</code></li>
+<li><code>$formatBase(35, 2) ~&gt; $pad(-8, '0')</code> =&gt; <code>&quot;00100011&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="contains"></a><a href="#contains" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$contains()</code></h2>
+<p><strong>Signature:</strong> <code>$contains(str, pattern)</code></p>
+<p>Returns <code>true</code> if <code>str</code> is matched by <code>pattern</code>, otherwise it returns <code>false</code>. If <code>str</code> is not specified (i.e. this function is invoked with one argument), then the context value is used as the value of <code>str</code>.</p>
+<p>The <code>pattern</code> parameter can either be a string or a regular expression (regex).  If it is a string, the function returns <code>true</code> if the characters within <code>pattern</code> are contained contiguously within <code>str</code>.  If it is a regex, the function will return <code>true</code> if the regex matches the contents of <code>str</code>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$contains(&quot;abracadabra&quot;, &quot;bra&quot;)</code> =&gt; <code>true</code></li>
+<li><code>$contains(&quot;abracadabra&quot;, /a.*a/)</code> =&gt; <code>true</code></li>
+<li><code>$contains(&quot;abracadabra&quot;, /ar.*a/)</code> =&gt; <code>false</code></li>
+<li><code>$contains(&quot;Hello World&quot;, /wo/)</code> =&gt; <code>false</code></li>
+<li><code>$contains(&quot;Hello World&quot;, /wo/i)</code> =&gt; <code>true</code></li>
+<li><code>Phone[$contains(number, /^077/)]</code> =&gt; <code>{ &quot;type&quot;: &quot;mobile&quot;, &quot;number&quot;: &quot;077 7700 1234&quot; }</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="split"></a><a href="#split" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$split()</code></h2>
+<p><strong>Signature:</strong> <code>$split(str, separator [, limit])</code></p>
+<p>Splits the <code>str</code> parameter into an array of substrings.  If <code>str</code> is not specified, then the context value is used as the value of <code>str</code>.  It is an error if <code>str</code> is not a string.</p>
+<p>The <code>separator</code> parameter can either be a string or a regular expression (regex).  If it is a string, it specifies the characters within <code>str</code> about which it should be split.  If it is the empty string, <code>str</code> will be split into an array of single characters.  If it is a regex, it splits the string around any sequence of characters that match the regex.</p>
+<p>The optional <code>limit</code> parameter is a number that specifies the maximum number of substrings to  include in the resultant array.  Any additional substrings are discarded.  If <code>limit</code> is not  specified, then <code>str</code> is fully split with no limit to the size of the resultant array.  It is an error if <code>limit</code> is not a non-negative number.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$split(&quot;so many words&quot;, &quot; &quot;)</code> =&gt; <code>[ &quot;so&quot;, &quot;many&quot;, &quot;words&quot; ]</code></li>
+<li><code>$split(&quot;so many words&quot;, &quot; &quot;, 2)</code> =&gt; <code>[ &quot;so&quot;, &quot;many&quot; ]</code></li>
+<li><code>$split(&quot;too much, punctuation. hard; to read&quot;, /[ ,.;]+/)</code> =&gt; <code>[&quot;too&quot;, &quot;much&quot;, &quot;punctuation&quot;, &quot;hard&quot;, &quot;to&quot;, &quot;read&quot;]</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="join"></a><a href="#join" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$join()</code></h2>
+<p><strong>Signature:</strong> <code>$join(array[, separator])</code></p>
+<p>Joins an array of component strings into a single concatenated string with each component string separated by the optional <code>separator</code> parameter.</p>
+<p>It is an error if the input array contains an item which isn't a string.</p>
+<p>If <code>separator</code> is not specified, then it is assumed to be the empty string, i.e. no separator between the component strings.  It is an error if <code>separator</code> is not a string.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$join(['a','b','c'])</code> =&gt; <code>&quot;abc&quot;</code></li>
+<li><code>$split(&quot;too much, punctuation. hard; to read&quot;, /[ ,.;]+/, 3) ~&gt; $join(', ')</code> =&gt; <code>&quot;too, much, punctuation&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="match"></a><a href="#match" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$match()</code></h2>
+<p><strong>Signature:</strong> <code>$match(str, pattern [, limit])</code></p>
+<p>Applies the <code>str</code> string to the <code>pattern</code> regular expression and returns an array of objects, with each object containing information about each occurrence of a match withing <code>str</code>.</p>
+<p>The object contains the following fields:</p>
+<ul>
+<li><code>match</code> - the substring that was matched by the regex.</li>
+<li><code>index</code> - the offset (starting at zero) within <code>str</code> of this match.</li>
+<li><code>groups</code> - if the regex contains capturing groups (parentheses), this contains an array of strings representing each captured group.</li>
+</ul>
+<p>If <code>str</code> is not specified, then the context value is used as the value of <code>str</code>.  It is an error if <code>str</code> is not a string.</p>
+<p><strong>Examples</strong></p>
+<p><code>$match(&quot;ababbabbcc&quot;,/a(b+)/)</code> =&gt;</p>
+<pre><code class="hljs">[
+  {
+    <span class="hljs-attr">"match"</span>: <span class="hljs-string">"ab"</span>,
+    <span class="hljs-attr">"index"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"groups"</span>: [<span class="hljs-string">"b"</span>]
+  },
+  {
+    <span class="hljs-attr">"match"</span>: <span class="hljs-string">"abb"</span>,
+    <span class="hljs-attr">"index"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">"groups"</span>: [<span class="hljs-string">"bb"</span>]
+  },
+  {
+    <span class="hljs-attr">"match"</span>: <span class="hljs-string">"abb"</span>,
+    <span class="hljs-attr">"index"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">"groups"</span>: [<span class="hljs-string">"bb"</span> ]
+  }
+]
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="replace"></a><a href="#replace" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$replace()</code></h2>
+<p><strong>Signature:</strong> <code>$replace(str, pattern, replacement [, limit])</code></p>
+<p>Finds occurrences of <code>pattern</code> within <code>str</code> and replaces them with <code>replacement</code>.</p>
+<p>If <code>str</code> is not specified, then the context value is used as the value of <code>str</code>.  It is an error if <code>str</code> is not a string.</p>
+<p>The <code>pattern</code> parameter can either be a string or a regular expression (regex).  If it is a string, it specifies the substring(s) within <code>str</code> which should be replaced.  If it is a regex, its is used to find .</p>
+<p>The <code>replacement</code> parameter can either be a string or a function.  If it is a string, it specifies the sequence of characters that replace the substring(s) that are matched by <code>pattern</code>.  If <code>pattern</code> is a regex, then the <code>replacement</code> string can refer to the characters that were matched by the regex as well as any of the captured groups using a <code>$</code> followed by a number <code>N</code>:</p>
+<ul>
+<li>If <code>N = 0</code>, then it is replaced by substring matched by the regex as a whole.</li>
+<li>If <code>N &gt; 0</code>, then it is replaced by the substring captured by the Nth parenthesised group in the regex.</li>
+<li>If <code>N</code> is greater than the number of captured groups, then it is replaced by the empty string.</li>
+<li>A literal <code>$</code> character must be written as <code>$$</code> in the <code>replacement</code> string</li>
+</ul>
+<p>If the <code>replacement</code> parameter is a function, then it is invoked for each match occurrence of the <code>pattern</code> regex.  The <code>replacement</code> function must take a single parameter which will be the object structure of a regex match as described in the <code>$match</code> function; and must return a string.</p>
+<p>The optional <code>limit</code> parameter,  is a number that specifies the maximum number of replacements to make before stopping.  The remainder of the input beyond this limit will be copied to the output unchanged.</p>
+<p><strong>Examples</strong></p>
+  <div class="jsonata-ex">
+    <div>$replace("John Smith and John Jones", "John", "Mr")</div>
+    <div>"Mr Smith and Mr Jones"</div>
+  </div>
+  <div class="jsonata-ex">
+    <div>$replace("John Smith and John Jones", "John", "Mr", 1)</div>
+    <div>"Mr Smith and John Jones"</div>
+  </div>
+  <div class="jsonata-ex">
+    <div>$replace("abracadabra", /a.*?a/, "*")</div>
+    <div>"*c*bra"</div>
+  </div>
+  <div class="jsonata-ex">
+    <div>$replace("John Smith", /(\w+)\s(\w+)/, "$2, $1")</div>
+    <div>"Smith, John"</div>
+  </div>
+  <div class="jsonata-ex">
+    <div>$replace("265USD", /([0-9]+)USD/, "$$$1")</div>
+    <div>"$265"</div>
+  </div>
+  <div class="jsonata-ex">
+    <div>(
+  $convert := function($m) {
+    ($number($m.groups[0]) - 32) * 5/9 & "C"
+  };
+  $replace("temperature = 68F today", /(\d+)F/, $convert)
+)</div>
+    <div>"temperature = 20C today"</div>
+  </div>
+<h2><a class="anchor" aria-hidden="true" id="eval"></a><a href="#eval" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$eval()</code></h2>
+<p><strong>Signature:</strong> <code>$eval(expr [, context])</code></p>
+<p>Parses and evaluates the string <code>expr</code> which contains literal JSON or a JSONata expression using the current context as the context for evaluation.</p>
+<p><strong>Examples</strong></p>
+<div class="jsonata-ex">
+  <div>$eval("[1,2,3]")</div>
+  <div>[1, 2, 3]</div>
+</div>
+<div class="jsonata-ex">
+  <div>$eval('[1,$string(2),3]')</div>
+  <div>[1,"2",3]</div>
+</div>
+<p>Optionally override the context by specifying the second parameter</p>
+<h2><a class="anchor" aria-hidden="true" id="base64encode"></a><a href="#base64encode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$base64encode()</code></h2>
+<p><strong>Signature:</strong> <code>$base64encode()</code></p>
+<p>Converts an ASCII string to a base 64 representation. Each each character in the string is treated as a byte of binary data. This requires that all characters in the string are in the 0x00 to 0xFF range, which includes all characters in URI encoded strings. Unicode characters outside of that range are not supported.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$base64encode(&quot;myuser:mypass&quot;)</code> =&gt; <code>&quot;bXl1c2VyOm15cGFzcw==&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="base64decode"></a><a href="#base64decode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$base64decode()</code></h2>
+<p><strong>Signature:</strong> <code>$base64decode()</code></p>
+<p>Converts base 64 encoded bytes to a string, using a UTF-8 Unicode codepage.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$base64decode(&quot;bXl1c2VyOm15cGFzcw==&quot;)</code> =&gt; <code>&quot;myuser:mypass&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="encodeurlcomponent"></a><a href="#encodeurlcomponent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$encodeUrlComponent()</code></h2>
+<p><strong>Signature:</strong> <code>$encodeUrlComponent(str)</code></p>
+<p>Encodes a Uniform Resource Locator (URL) component by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$encodeUrlComponent(&quot;?x=test&quot;)</code> =&gt; <code>&quot;%3Fx%3Dtest&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="encodeurl"></a><a href="#encodeurl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$encodeUrl()</code></h2>
+<p><strong>Signature:</strong> <code>$encodeUrl(str)</code></p>
+<p>Encodes a Uniform Resource Locator (URL) by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$encodeUrl(&quot;https://mozilla.org/?x=шеллы&quot;)</code> =&gt; <code>&quot;https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="decodeurlcomponent"></a><a href="#decodeurlcomponent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$decodeUrlComponent()</code></h2>
+<p><strong>Signature:</strong> <code>$decodeUrlComponent(str)</code></p>
+<p>Decodes a Uniform Resource Locator (URL) component previously created by encodeUrlComponent.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$decodeUrlComponent(&quot;%3Fx%3Dtest&quot;)</code> =&gt; <code>&quot;?x=test&quot;</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="decodeurl"></a><a href="#decodeurl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>$decodeUrl()</code></h2>
+<p><strong>Signature:</strong> <code>$decodeUrl(str)</code></p>
+<p>Decodes a Uniform Resource Locator (URL) previously created by encodeUrl.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>$decodeUrl(&quot;https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B&quot;)</code> =&gt; <code>&quot;https://mozilla.org/?x=шеллы&quot;</code></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/1.7.0/other-operators"><span class="arrow-prev">← </span><span>Other Operators</span></a><a class="docs-next button" href="/1.7.0/numeric-functions"><span>Numeric Functions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#string"><code>$string()</code></a></li><li><a href="#length"><code>$length()</code></a></li><li><a href="#substring"><code>$substring()</code></a></li><li><a href="#substringbefore"><code>$substringBefore()</code></a></li><li><a href="#substringafter"><code>$substringAfter()</code></a></li><li><a href="#uppercase"><code>$uppercase()</code></a></li><li><a href="#lowercase"><code>$lowercase()</code></a></li><li><a href="#trim"><code>$trim()</code></a></li><li><a href="#pad"><code>$pad()</code></a></li><li><a href="#contains"><code>$contains()</code></a></li><li><a href="#split"><code>$split()</code></a></li><li><a href="#join"><code>$join()</code></a></li><li><a href="#match"><code>$match()</code></a></li><li><a href="#replace"><code>$replace()</code></a></li><li><a href="#eval"><code>$eval()</code></a></li><li><a href="#base64encode"><code>$base64encode()</code></a></li><li><a href="#base64decode"><code>$base64decode()</code></a></li><li><a href="#encodeurlcomponent"><code>$encodeUrlComponent()</code></a></li><li><a href="#encodeurl"><code>$encodeUrl()</code></a></li><li><a href="#decodeurlcomponent"><code>$decodeUrlComponent()</code></a></li><li><a href="#decodeurl"><code>$decodeUrl()</code></a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 JSONata.org</section></footer></div></body></html>
