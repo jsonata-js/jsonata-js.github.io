@@ -93,7 +93,7 @@ If the number is non-integer, then it is rounded <em>down</em> to the nearest in
 <p>sorts all of the products into order of increasing price (<code>Price</code> is a numeric field in the <code>Product</code> object).</p>
 <p>To sort in descending order, the sort expression must be preceded by the <code>&gt;</code> symbol. For example:</p>
 <p><code>Account.Order.Product^(&gt;Price)</code></p>
-<p>sorts all of the products into order of decreasing price.  The <code>&lt;</code> symbol can be used explicitly indicate ascending order, although that is the default behaviour.</p>
+<p>sorts all of the products into order of decreasing price.  The <code>&lt;</code> symbol can be used to explicitly indicate ascending order, although that is the default behaviour.</p>
 <p>Secondary (and more) sort expressions can be specified by separating them with commas (<code>,</code>).  The secondary expression will be used to determine order if the primary expression ranks two values the same.  For example,</p>
 <p><code>Account.Order.Product^(&gt;Price, &lt;Quantity)</code></p>
 <p>orders the products primarily by decreasing price, but for products of the same price, by increasing quantity.</p>
