@@ -62,9 +62,9 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JSONata test<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/jsonata/jsonata.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeting</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeting</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> json = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'json'</span>).value);
-        <span class="hljs-keyword">var</span> result = jsonata(<span class="hljs-string">'"Hello, " &amp; name'</span>).evaluate(json);
+        <span class="hljs-keyword">var</span> result = <span class="hljs-keyword">await</span> jsonata(<span class="hljs-string">'"Hello, " &amp; name'</span>).evaluate(json);
         <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'greeting'</span>).innerHTML = result;
       }
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>

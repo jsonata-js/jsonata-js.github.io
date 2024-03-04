@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Using Regular Expressions · JSONata</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The regular expression is a syntax for matching and extracting parts of a string.  JSONata provides first class support for regular expressions surrounded by the familiar slash delimeters found in many scripting languages.  "/><meta name="docsearch:version" content="1.8.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Using Regular Expressions · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/"/><meta property="og:description" content="The regular expression is a syntax for matching and extracting parts of a string.  JSONata provides first class support for regular expressions surrounded by the familiar slash delimeters found in many scripting languages.  "/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><a href="/versions"><h3>1.8.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/1.8.0/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Language Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.8.0/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.8.0/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/programming">Functional Programming</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/1.8.0/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.8.0/path-operators">Path Operators</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/boolean-operators">Boolean Operators</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/other-operators">Other Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.8.0/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul class=""><li class="navListItem"><a class="navItem" href="/1.8.0/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/1.8.0/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/regex.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Using Regular Expressions</h1></header><article><div><span><p>The regular expression is a syntax for matching and extracting parts of a string.  JSONata provides first class support for regular expressions surrounded by the familiar slash delimeters found in many scripting languages.</p>
+<p><code>/regex/flags</code></p>
+<p>where:</p>
+<ul>
+<li><code>regex</code> - the regular expression</li>
+<li><code>flags</code> - optionally either or both of:
+<ul>
+<li><code>i</code> - ignore case</li>
+<li><code>m</code> - multiline match</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="functions-which-use-regular-expressions"></a><a href="#functions-which-use-regular-expressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functions which use regular expressions</h2>
+<p>A number of functions are available that take a regular expression as a parameter</p>
+<ul>
+<li><a href="string-functions#match">$match()</a></li>
+<li><a href="string-functions#contains">$contains()</a></li>
+<li><a href="string-functions#split">$split()</a></li>
+<li><a href="string-functions#replace">$replace()</a></li>
+</ul>
+<p><strong>Examples</strong></p>
+<h2><a class="anchor" aria-hidden="true" id="regular-expressions-in-query-predicates"></a><a href="#regular-expressions-in-query-predicates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Regular expressions in query predicates</h2>
+<p>Regexes are often used in query predicates (filter expressions) when selecting objects that contain a matching string property.  For this, a short cut notation can be used as follows:</p>
+<p><code>path.to.object[stringProperty ~&gt; /regex/]</code></p>
+<p>The <code>~&gt;</code> is the <a href="control-operators#chain">chain operator</a>, and its use here implies that the result of <code>/regex/</code> is a function.  We'll see below that this is in fact the case.</p>
+<p><strong>Examples</strong></p>
+<p><code>Account.Order.Product[`Product Name` ~&gt; /hat/i ]</code></p>
+<p>will match all products that have 'hat' in their name.</p>
+<h2><a class="anchor" aria-hidden="true" id="generic-matchers"></a><a href="#generic-matchers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generic matchers</h2>
+<p>The JSONata type system is based on the JSON type system, with the addition of the function type.  In order to accommodate the regex as a standalone expression, the syntax <code>/regex/</code> evaluates to a function.  Think of the <code>/regex/</code> syntax as a higher-order function that results in a 'matching function' when evaluated.  The <code>regex</code> between the slashes is the parameter to this HOF and the function that gets returned, when applied to <em>its</em> string parameter, will return a structure that contains details of parts of the string that have been matched.  If nothing is matched, then it returns the empty sequence (i.e. JavaScript <code>undefined</code>).</p>
+<p><strong>Example</strong></p>
+<p><code>$matcher := /[a-z]*an[a-z]*/i</code></p>
+<p>Evaluation of the regex returns a function, and this has been bound to a variable <code>$matcher</code>.  Later, the <code>$matcher</code> function is invoked on a string:</p>
+<p><code>$matcher('A man, a plan, a canal, Panama!')</code></p>
+<p>This returns the following JSONata object (JSON, but also with a function property):</p>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"match"</span>: <span class="hljs-string">"plan"</span>,
+  <span class="hljs-attr">"start"</span>: <span class="hljs-number">9</span>,
+  <span class="hljs-attr">"end"</span>: <span class="hljs-number">13</span>,
+  <span class="hljs-attr">"groups"</span>: [],
+  <span class="hljs-attr">"next"</span>: <span class="hljs-string">"&lt;native function&gt;#0"</span>
+}
+</code></pre>
+<p>This contains information of the first matching substring within this famous palindrome, specifically:</p>
+<ul>
+<li><code>match</code> - the substring within the original string that matches the regex</li>
+<li><code>start</code> - the starting position (zero offset) of the matching substring within the original string</li>
+<li><code>end</code> - the endinging position of the matching substring within the original string</li>
+<li><code>groups</code> - if capturing groups are used in the regex, then this array contains a string for the text captured by each group</li>
+<li><code>next()</code> - when invoked, will return details of the second occurrence of any matching substring (and so on).</li>
+</ul>
+<p>In this example, invoking <code>next()</code> will return:</p>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"match"</span>: <span class="hljs-string">"canal"</span>,
+  <span class="hljs-attr">"start"</span>: <span class="hljs-number">17</span>,
+  <span class="hljs-attr">"end"</span>: <span class="hljs-number">22</span>,
+  <span class="hljs-attr">"groups"</span>: [],
+  <span class="hljs-attr">"next"</span>: <span class="hljs-string">"&lt;native function&gt;#0"</span>
+}
+</code></pre>
+<p>and so on, until it eventually returns the empty sequence.</p>
+<h2><a class="anchor" aria-hidden="true" id="writing-a-custom-matcher"></a><a href="#writing-a-custom-matcher" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a custom matcher</h2>
+<p>We've learned that the regex syntax is just a function generator, and the signature and return structure of the generated 'matcher' function is well defined.  The four regex-aware functions (<code>$match</code>, <code>$contain</code>, <code>$split</code>, <code>$replace</code>) simply invoke this function as part of their implementation.  Apart from that, they have no awareness that these matcher functions were generated by the regex syntax.</p>
+<p>So it's possible to write any user-defined matcher function, provided it conforms to this contract.  This can be done as a JSONata lambda function or (more likely) as an extension function.  It can then be passed to these four 'regex-aware' functions and they will search using the custom matcher rather than a regex.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/1.8.0/programming"><span class="arrow-prev">← </span><span>Functional Programming</span></a><a class="docs-next button" href="/1.8.0/date-time"><span>Date/Time Processing</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#functions-which-use-regular-expressions">Functions which use regular expressions</a></li><li><a href="#regular-expressions-in-query-predicates">Regular expressions in query predicates</a></li><li><a href="#generic-matchers">Generic matchers</a></li><li><a href="#writing-a-custom-matcher">Writing a custom matcher</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2021 JSONata.org</section></footer></div></body></html>
