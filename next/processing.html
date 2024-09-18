@@ -89,7 +89,7 @@
 <tr><td><strong>Filter</strong></td><td>seq<code>[</code>expr<code>]</code></td><td>Filter results from previous stage by applying predicate expression between brackets to each item.</td></tr>
 <tr><td><strong>Sort</strong></td><td>seq<code>^(</code>expr<code>)</code></td><td>Sorts (re-orders) the input sequence according to the criteria in parentheses.</td></tr>
 <tr><td><strong>Index</strong></td><td>seq<code>#</code>$var</td><td>Binds a named variable to the current context position (zero offset) in the sequence.</td></tr>
-<tr><td><strong>Join</strong></td><td>seq<code>@</code>$var</td><td>Binds a named variable to the current current context item in the sequence.  Can only be used directly following a map stage.</td></tr>
+<tr><td><strong>Join</strong></td><td>seq<code>@</code>$var</td><td>Binds a named variable to the current context item in the sequence.  Can only be used directly following a map stage.</td></tr>
 <tr><td><strong>Reduce</strong></td><td>seq<code>{</code> expr<code>:</code>expr<code>,</code> expr<code>:</code>expr ...<code>}</code></td><td>Group and aggregate the input sequence to a single result object as defined by the name/value expressions.  Can only appear as the final stage in a path expression.</td></tr>
 </tbody>
 </table>
