@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>The JSONata processing model · JSONata</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## The JSONata type system"/><meta name="docsearch:version" content="2.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="The JSONata processing model · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/"/><meta property="og:description" content="## The JSONata type system"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><a href="/versions"><h3>2.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/2.0.0/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Language Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/2.0.0/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/path-operators">Path Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-operators">Boolean Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/other-operators">Other Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/processing.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">The JSONata processing model</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="the-jsonata-type-system"></a><a href="#the-jsonata-type-system" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The JSONata type system</h2>
+<p>JSONata is a superset of JSON and the JSONata type system is a superset of the JSON data types.  In common with all functional programming languages, the function is also a first-class data type.  The following data types are supported by JSONata:</p>
+<ul>
+<li>string</li>
+<li>number</li>
+<li>Boolean</li>
+<li>null</li>
+<li>object</li>
+<li>array</li>
+<li>function</li>
+</ul>
+<p>All but the last one are in common with JSON.</p>
+<h2><a class="anchor" aria-hidden="true" id="sequences"></a><a href="#sequences" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sequences</h2>
+<p>JSONata has been designed foremost as a query language, whereby a path expression can select zero, one or more than one values from the JSON document.  These values, each of which can be of any of the types listed above, are returned as a <em>result sequence</em>.  During the evaluation of expressions, which involves the results of subexpressions being combined or becoming the context inputs to other subexpressions, the sequences are subject to the process of <em>sequence flattening</em>.</p>
+<p>The sequence flattening rules are as follows:</p>
+<ol>
+<li><p>An <strong>empty sequence</strong> is a sequence with no values and is considered to be 'nothing' or 'no match'.  It won't appear in the output of any expression. If it is associated with an object property (key/value) pair in a result object, then that object will not have that property.</p></li>
+<li><p>A <strong>singleton sequence</strong> is a sequence containing a single value.  It is considered equivalent to that value itself, and the output from any expression, or sub-expression will be that value without any surrounding structure.</p></li>
+<li><p>A sequence containing more than one value is represented in the output as a JSON array.  This is still internally flagged as a sequence and subject to the next rule.  Note that if an expression matches an array from the input JSON, or a JSON array is explicitly constructed in the query using the <a href="construction#array-constructors">array constructor</a>, then this remains an array of values rather than a sequence of values and will not be subject to the sequence flattening rules.  However, if this array becomes the context of a subsequent expression, then the result of that <em>will</em> be a sequence.</p></li>
+<li><p>If a sequence contains one or more (sub-)sequences, then the values from the sub-sequence are pulled up to the level of the outer sequence.  A result sequence will never contain child sequences (they are flattened).</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="jsonata-path-processing"></a><a href="#jsonata-path-processing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSONata path processing</h2>
+<p>The JSONata path expression is a <em>declarative functional</em> language.</p>
+<p><strong>Functional</strong> because it is based on the map/filter/reduce programming paradigm as supported by popular functional programming languages through the use of higher-order functions.</p>
+<p><strong>Declarative</strong> because these higher-order functions are exposed through a lightweight syntax which lets the user focus on the intention of the query (declaration) rather than the programming constructs that control their evaluation.</p>
+<p>A path expression is a sequence of one or more of the following functional stages:</p>
+<table>
+<thead>
+<tr><th>Stage</th><th>Syntax</th><th>Action</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Map</strong></td><td>seq<code>.</code>expr</td><td>Evaluates the RHS expression in the context of each item in the input sequence.  Flattens results into result sequence.</td></tr>
+<tr><td><strong>Filter</strong></td><td>seq<code>[</code>expr<code>]</code></td><td>Filter results from previous stage by applying predicate expression between brackets to each item.</td></tr>
+<tr><td><strong>Sort</strong></td><td>seq<code>^(</code>expr<code>)</code></td><td>Sorts (re-orders) the input sequence according to the criteria in parentheses.</td></tr>
+<tr><td><strong>Index</strong></td><td>seq<code>#</code>$var</td><td>Binds a named variable to the current context position (zero offset) in the sequence.</td></tr>
+<tr><td><strong>Join</strong></td><td>seq<code>@</code>$var</td><td>Binds a named variable to the current current context item in the sequence.  Can only be used directly following a map stage.</td></tr>
+<tr><td><strong>Reduce</strong></td><td>seq<code>{</code> expr<code>:</code>expr<code>,</code> expr<code>:</code>expr ...<code>}</code></td><td>Group and aggregate the input sequence to a single result object as defined by the name/value expressions.  Can only appear as the final stage in a path expression.</td></tr>
+</tbody>
+</table>
+<p>In the above table:</p>
+<ul>
+<li>In the 'Syntax' column, 'seq' refers to the input sequence for the current stage, which is the result sequence from the previous stage.</li>
+<li>The 'Action' column gives a brief outline of the stage's behavior; fuller details are in the <a href="path-operators">Path Operators</a> reference page.</li>
+<li>The relative precedence of each operator affects the scope of its influence on the input sequence. Specifically,
+<ul>
+<li>The Filter operator binds tighter than the Map operator.  This means, for example, that <code>books.authors[0]</code> will select the all of the first authors from <em>each</em> book rather than the first author from all of the books.</li>
+<li>The Sort (order-by) operator has the lowest precedence, meaning that the full path to the left of it will be evaluated, and its result sequence will be sorted.</li>
+<li>This operator precedence can be overridden by using parentheses.  For example, <code>(books.authors)[0]</code> will select the the first author from all of the books (single value).  Note, however, that parentheses also define a scope frame for variables, so any variables that have been bound within the parentheses block including those bound by the <code>@</code> and <code>#</code> operators will go out of scope at the end of the parens block.</li>
+</ul></li>
+<li>The variables bound by the <code>@</code> and <code>#</code> operators go out of scope at the end of the path expression.
+<ul>
+<li>The Reduce stage, if used, will terminate the current path expression.  Although a Map operator can immediately follow this, it will be interpreted as the start of a new path expression, meaning that any previously bound context or index variables will be out of scope.</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/2.0.0/sorting-grouping"><span class="arrow-prev">← </span><span>Sorting, Grouping and Aggregation</span></a><a class="docs-next button" href="/2.0.0/programming"><span>Functional Programming</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#the-jsonata-type-system">The JSONata type system</a></li><li><a href="#sequences">Sequences</a></li><li><a href="#jsonata-path-processing">JSONata path processing</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2021 JSONata.org</section></footer></div></body></html>
