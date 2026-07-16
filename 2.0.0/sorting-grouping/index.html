@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Sorting, Grouping and Aggregation · JSONata</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Sorting"/><meta name="docsearch:version" content="2.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Sorting, Grouping and Aggregation · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/"/><meta property="og:description" content="## Sorting"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><a href="/versions"><h3>2.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/2.0.0/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Language Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/composition">Query Composition</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/2.0.0/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/path-operators">Path Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-operators">Boolean Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/other-operators">Other Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/sorting-grouping.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Sorting, Grouping and Aggregation</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="sorting"></a><a href="#sorting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sorting</h2>
+<p>Arrays contain an ordered collection of values.  If you need to re-order the values, then the array must be sorted.  In JSONata, there are two ways of sorting an array:</p>
+<ol>
+<li><p>Using the <a href="array-functions#sort"><code>$sort()</code></a> function.</p></li>
+<li><p>Using the <a href="path-operators#order-by-">order-by</a> operator.</p></li>
+</ol>
+<p>The <a href="path-operators#order-by-">order-by</a> operator is a convenient syntax that can used directly in a path expression to sort the result sequences in ascending or descending order.  The <a href="array-functions#sort"><code>$sort()</code></a> function requires more syntax to be written, but is more flexible and supports custom comparator functions.</p>
+<h2><a class="anchor" aria-hidden="true" id="grouping"></a><a href="#grouping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grouping</h2>
+<p>The JSONata <a href="construction#object-constructors">object constructor</a> syntax allows you to specify an expression for the key in any key/value pair (the value can obviously be an expression too). The key expression must evaluate to a string since this is a restriction on JSON objects.  The key and value expressions are evaluated for each item in the input context (see <a href="processing#the-jsonata-processing-model">processing model</a>). The result of each key/value expression pair is inserted into the resulting JSON object.</p>
+<p>If the evaluation of any key expression results in a key that is already in the result object, then the result of its associated value expression will be grouped with the value(s) already associated with that key. Note that the value expressions are not evaluated until all of the grouping has been performed.  This allows for aggregation expressions to be evaluated over the collection of items for each group.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><p>Group all of the product sales by name, with the price of each item in each group</p>
+  <div class="jsonata-ex">
+    <div>Account.Order.Product{`Product Name`: Price}</div>
+    <div>{
+  "Bowler Hat": [ 34.45, 34.45 ],
+  "Trilby hat": 21.67,
+  "Cloak": 107.99
+}</div>
+  </div>
+</li>
+<li><p>Group all of the product sales by name, with the price and the quantity of each item in each group</p>
+  <div class="jsonata-ex">
+    <div>Account.Order.Product {
+  `Product Name`: {"Price": Price, "Qty": Quantity}
+}</div>
+    <div>{
+  "Bowler Hat": {
+    "Price": [ 34.45, 34.45 ],
+    "Qty": [ 2, 4 ]
+  },
+  "Trilby hat": { "Price": 21.67, "Qty": 1 },
+  "Cloak": { "Price": 107.99, "Qty": 1 }
+}</div>
+  </div>
+</li>
+</ul>
+<p>Note in the above example, the value expression grouped all of the prices together and all of the quantities together into separate arrays.  This is because the context value is the sequence of all grouped Products and the <code>Price</code> expression will select all prices from all products.  If you want to collect the price and quantity into individual objects, then you need to evaluate the object constructor <em>for each</em> product in the context sequence.  The following example shows this.</p>
+<ul>
+<li><p>Explicit use of <code>$.{ ... }</code> to create an object for each item in the group.</p>
+  <div class="jsonata-ex">
+    <div>Account.Order.Product {
+  `Product Name`: $.{"Price": Price, "Qty": Quantity}
+}</div>
+    <div>{
+  "Bowler Hat": [
+    { "Price": 34.45, "Qty": 2 },
+    { "Price": 34.45, "Qty": 4 }
+  ],
+  "Trilby hat": { "Price": 21.67, "Qty": 1 },
+  "Cloak": { "Price": 107.99, "Qty": 1 }
+}</div>
+  </div>
+</li>
+<li><p>Multiply the Price by the Quantity for each product in each group</p>
+  <div class="jsonata-ex">
+    <div>Account.Order.Product{`Product Name`: $.(Price*Quantity)}</div>
+    <div>{
+  "Bowler Hat": [ 68.9, 137.8 ],
+  "Trilby hat": 21.67,
+  "Cloak": 107.99
+}</div>
+  </div>
+</li>
+<li><p>The total aggregated value in each group</p>
+  <div class="jsonata-ex">
+    <div>Account.Order.Product{`Product Name`: $sum($.(Price*Quantity))}</div>
+    <div>{
+  "Bowler Hat": 206.7,
+  "Trilby hat": 21.67,
+  "Cloak": 107.99
+}</div>
+  </div>
+</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="aggregation"></a><a href="#aggregation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aggregation</h2>
+<p>Often queries are just required to return aggregated results from a set of matching values.  A number of aggregation functions are available which return a single aggregated value when applied to an array of values.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><p>Total price of each product in each order</p>
+  <div class="jsonata-ex">
+    <div>$sum(Account.Order.Product.Price)</div>
+    <div>198.56</div>
+  </div>
+</li>
+<li><p>More likely want to add up the total of the price times quantity for each order</p>
+  <div class="jsonata-ex">
+    <div>$sum(Account.Order.Product.(Price*Quantity))</div>
+    <div>336.36</div>
+  </div>
+</li>
+</ul>
+<p>Other <a href="aggregation-functions">numeric aggregation functions</a> are available (i.e. average, min, max) and an <a href="string-functions#join">aggregator for strings</a>.  It is also possible to write complex custom aggregators using the <a href="higher-order-functions#reduce"><code>$reduce()</code></a> higher-order function.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/2.0.0/composition"><span class="arrow-prev">← </span><span>Query Composition</span></a><a class="docs-next button" href="/2.0.0/processing"><span>Processing Model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#sorting">Sorting</a></li><li><a href="#grouping">Grouping</a></li><li><a href="#aggregation">Aggregation</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2021 JSONata.org</section></footer></div></body></html>

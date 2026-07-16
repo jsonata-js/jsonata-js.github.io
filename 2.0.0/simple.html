@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Simple Queries · JSONata</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To support the extraction of values from a JSON structure, a location path syntax is defined. In common with XPath, this will select all possible values in the document that match the specified location path.  The two structural constructs of JSON are objects and arrays."/><meta name="docsearch:version" content="2.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Simple Queries · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/"/><meta property="og:description" content="To support the extraction of values from a JSON structure, a location path syntax is defined. In common with XPath, this will select all possible values in the document that match the specified location path.  The two structural constructs of JSON are objects and arrays."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><a href="/versions"><h3>2.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/2.0.0/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Language Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/2.0.0/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/path-operators">Path Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-operators">Numeric Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-operators">Boolean Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/other-operators">Other Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/simple.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Simple Queries</h1></header><article><div><span><p>To support the extraction of values from a JSON structure, a location path syntax is defined. In common with XPath, this will select all possible values in the document that match the specified location path.  The two structural constructs of JSON are objects and arrays.</p>
+<h2><a class="anchor" aria-hidden="true" id="navigating-json-objects"></a><a href="#navigating-json-objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Navigating JSON Objects</h2>
+<p>A JSON object is an associative array (a.k.a map or hash). The location path syntax to navigate into an arbitrarily deeply nested structure of JSON objects comprises the field names separated by dot '.' delimiters. The expression returns the JSON value referenced after navigating to the last step in the location path.  If during the navigation of the location path, a field is not found, then the expression returns nothing (represented by Javascript <em>undefined</em>).  No errors are thrown as a result of non-existing data in the input document.</p>
+<p>The following sample JSON document is used by examples throughout this guide, unless otherwise indicated:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"FirstName"</span>: <span class="hljs-string">"Fred"</span>,
+  <span class="hljs-attr">"Surname"</span>: <span class="hljs-string">"Smith"</span>,
+  <span class="hljs-attr">"Age"</span>: <span class="hljs-number">28</span>,
+  <span class="hljs-attr">"Address"</span>: {
+    <span class="hljs-attr">"Street"</span>: <span class="hljs-string">"Hursley Park"</span>,
+    <span class="hljs-attr">"City"</span>: <span class="hljs-string">"Winchester"</span>,
+    <span class="hljs-attr">"Postcode"</span>: <span class="hljs-string">"SO21 2JN"</span>
+  },
+  <span class="hljs-attr">"Phone"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"home"</span>,
+      <span class="hljs-attr">"number"</span>: <span class="hljs-string">"0203 544 1234"</span>
+    },
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"office"</span>,
+      <span class="hljs-attr">"number"</span>: <span class="hljs-string">"01962 001234"</span>
+    },
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"office"</span>,
+      <span class="hljs-attr">"number"</span>: <span class="hljs-string">"01962 001235"</span>
+    },
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"mobile"</span>,
+      <span class="hljs-attr">"number"</span>: <span class="hljs-string">"077 7700 1234"</span>
+    }
+  ],
+  <span class="hljs-attr">"Email"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"work"</span>,
+      <span class="hljs-attr">"address"</span>: [<span class="hljs-string">"fred.smith@my-work.com"</span>, <span class="hljs-string">"fsmith@my-work.com"</span>]
+    },
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"home"</span>,
+      <span class="hljs-attr">"address"</span>: [<span class="hljs-string">"freddy@my-social.com"</span>, <span class="hljs-string">"frederic.smith@very-serious.com"</span>]
+    }
+  ],
+  <span class="hljs-attr">"Other"</span>: {
+    <span class="hljs-attr">"Over 18 ?"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"Misc"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"Alternative.Address"</span>: {
+      <span class="hljs-attr">"Street"</span>: <span class="hljs-string">"Brick Lane"</span>,
+      <span class="hljs-attr">"City"</span>: <span class="hljs-string">"London"</span>,
+      <span class="hljs-attr">"Postcode"</span>: <span class="hljs-string">"E1 6RF"</span>
+    }
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<p>Here are some example expressions and their results when applied to the above JSON document:</p>
+<ul>
+<li><p>Returns a JSON string (&quot;double quoted&quot;)</p>
+  <div class="jsonata-ex">
+    <div>Surname</div>
+    <div>"Smith"</div>
+  </div>
+</li>
+<li><p>Returns a JSON number</p>
+  <div class="jsonata-ex">
+    <div>Age</div>
+    <div>28</div>
+  </div>
+</li>
+<li><p>Field references are separated by '.'</p>
+  <div class="jsonata-ex">
+    <div>Address.City</div>
+    <div>"Winchester"</div>
+  </div>
+</li>
+<li><p>Matched the path and returns the null value</p>
+  <div class="jsonata-ex">
+    <div>Other.Misc</div>
+    <div>null</div>
+  </div>
+</li>
+<li><p>Path not found.  Returns nothing (i.e. Javascript <em>undefined</em>)</p>
+  <div class="jsonata-ex">
+    <div>Other.Nothing</div>
+    <div></div>
+  </div>
+</li>
+<li><p>Field references containing whitespace or reserved tokens can be enclosed in backticks</p>
+  <div class="jsonata-ex">
+    <div>Other.`Over 18 ?`</div>
+    <div>true</div>
+  </div>
+</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="navigating-json-arrays"></a><a href="#navigating-json-arrays" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Navigating JSON Arrays</h2>
+<p>JSON arrays are used when an ordered collection of values is required.  Each value in the array is associated with an index (position) rather than a name, so in order to address individual values in an array, extra syntax is required to specify the index.  This is done using square brackets after the field name of the array.  If the square brackets contains a number, or an expression that evaluates to a number, then the number represents the index of the value to select.  Indexes are zero offset, i.e. the first value in an array <code>arr</code> is <code>arr[0]</code>.  If the number is not an integer, then it is rounded <em>down</em> to an integer.  If the expression in square brackets is non-numeric, or is an expression that doesn't evaluate to a number, then it is treated as a <a href="predicate#predicates">predicate</a>.</p>
+<p>Negative indexes count from the end of the array, for example, <code>arr[-1]</code> will select the last value, <code>arr[-2]</code> the second to last, etc. If an index is specified that exceeds the size of the array, then nothing is selected.</p>
+<p>If no index is specified for an array (i.e. no square brackets after the field reference), then the whole array is selected. If the array contains objects, and the location path selects fields within these objects, then each object within the array will be queried for selection.</p>
+<h4><a class="anchor" aria-hidden="true" id="examples-1"></a><a href="#examples-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<ul>
+<li><p>Returns the first item (an object)</p>
+  <div class="jsonata-ex">
+    <div>Phone[0]</div>
+    <div>{ "type": "home", "number": "0203 544 1234" }</div>
+  </div>
+</li>
+<li><p>Returns the second item</p>
+  <div class="jsonata-ex">
+    <div>Phone[1]</div>
+    <div>{ "type": "office", "number": "01962 001234" }</div>
+  </div>
+</li>
+<li><p>Returns the last item</p>
+  <div class="jsonata-ex">
+    <div>Phone[-1]</div>
+    <div>{ "type": "mobile", "number": "077 7700 1234" }</div>
+  </div>
+</li>
+<li><p>Negative indexed count from the end</p>
+  <div class="jsonata-ex">
+    <div>Phone[-2]</div>
+    <div>{ "type": "office", "number": "01962 001235" }</div>
+  </div>
+</li>
+<li><p>Doesn't exist - returns nothing</p>
+  <div class="jsonata-ex">
+    <div>Phone[8]</div>
+    <div></div>
+  </div>
+</li>
+<li><p>Selects the <code>number</code> field in the first item</p>
+  <div class="jsonata-ex">
+    <div>Phone[0].number</div>
+    <div>"0203 544 1234"</div>
+  <div>
+</li>
+<li><p>No index is given to <code>Phone</code> so it selects all of them (the whole array), then it selects all the <code>number</code> fields for each of them</p>
+  <div class="jsonata-ex">
+    <div>Phone.number</div>
+    <div>[ "0203 544 1234", "01962 001234", "01962 001235", "077 7700 1234" ]</div>
+  <div>
+</li>
+<li><p>Might expect it to just return the first number, but it returns the first number of each of the items selected by <code>Phone</code></p>
+  <div class="jsonata-ex">
+    <div>Phone.number[0]</div>
+    <div>[ "0203 544 1234", "01962 001234", "01962 001235", "077 7700 1234" ]</div>
+  </div>
+</li>
+<li><p>Applies the index to the array returned by <code>Phone.number</code>. One use of <a href="/2.0.0/composition#parenthesized-expressions-and-blocks">parentheses</a>.</p>
+  <div class="jsonata-ex">
+    <div>(Phone.number)[0]</div>
+    <div>"0203 544 1234"</div>
+  </div>
+</li>
+<li><p>Returns a range of items by creating an array of indexes</p>
+  <div class="jsonata-ex">
+    <div>Phone[[0..1]]</div>
+    <div>[
+  { "type": "home", "number": "0203 544 1234" },
+  { "type": "office", "number": "01962 001234" }
+]</div>
+  </div>
+</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="result-sequences"></a><a href="#result-sequences" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Result sequences</h2>
+<h2><a class="anchor" aria-hidden="true" id="sequence-flattening"></a><a href="#sequence-flattening" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sequence flattening</h2>
+<h2><a class="anchor" aria-hidden="true" id="empty-sequences-and-singleton-sequences"></a><a href="#empty-sequences-and-singleton-sequences" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Empty sequences and singleton sequences</h2>
+<h3><a class="anchor" aria-hidden="true" id="top-level-arrays-nested-arrays-and-array-flattening"></a><a href="#top-level-arrays-nested-arrays-and-array-flattening" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Top level arrays, nested arrays and array flattening</h3>
+<p>Consider the JSON document:</p>
+<pre><code class="hljs">[
+  { &quot;ref&quot;: [ 1,2 ] },
+  { &quot;ref&quot;: [ 3,4 ] }
+]
+</code></pre>
+<p>At the top level, we have an array rather than an object.  If we want to select the first object in this top level array, we don't have a field name to append the <code>[0]</code> to.  We can't use <code>[0]</code> on its own because that clashes with the <a href="/2.0.0/construction#array-constructors">array constructor</a> syntax.  However, we can use the <em>context</em> reference <code>$</code> to refer to the start of the document as follows:</p>
+<ul>
+<li><p><code>$</code> at the start of an expression refers to the entire input document</p>
+  <div class="jsonata-ex">
+    <div>$[0]</div>
+    <div>{ "ref": [ 1,2 ] }</div>
+  <div>
+</li>
+<li><p><code>.ref</code> here returns the entire internal array</p>
+  <div class="jsonata-ex">
+    <div>$[0].ref</div>
+    <div>[ 1,2 ]</div>
+  </div>
+</li>
+<li><p>returns element on first position of the internal array</p>
+  <div class="jsonata-ex">
+    <div>$[0].ref[0]</div>
+    <div>1</div>
+  </div>
+</li>
+<li><p>Despite the structure of the nested array, the resultant selection is flattened into a single flat array.  The original nested structure of the input arrays is lost. See <a href="/2.0.0/construction#array-constructors">Array constructors</a> for how to maintain the original structure in the results.</p>
+  <div class="jsonata-ex">
+    <div>$.ref</div>
+    <div>[ 1, 2, 3, 4 ]</div>
+  </div>
+</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/2.0.0/using-browser"><span class="arrow-prev">← </span><span>In a Web Page</span></a><a class="docs-next button" href="/2.0.0/predicate"><span>Predicate Queries</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#navigating-json-objects">Navigating JSON Objects</a></li><li><a href="#navigating-json-arrays">Navigating JSON Arrays</a></li><li><a href="#result-sequences">Result sequences</a></li><li><a href="#sequence-flattening">Sequence flattening</a></li><li><a href="#empty-sequences-and-singleton-sequences">Empty sequences and singleton sequences</a><ul class="toc-headings"><li><a href="#top-level-arrays-nested-arrays-and-array-flattening">Top level arrays, nested arrays and array flattening</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2021 JSONata.org</section></footer></div></body></html>
