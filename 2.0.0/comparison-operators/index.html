@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Comparison Operators · JSONata</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## `=` (Equals)"/><meta name="docsearch:version" content="2.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Comparison Operators · JSONata"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.jsonata.org/"/><meta property="og:description" content="## `=` (Equals)"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/jsonata-button.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/jsonata-examples.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/jsonata-button.png" alt="JSONata"/><h2 class="headerTitleWithLogo">JSONata</h2></a><a href="/versions"><h3>2.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/2.0.0/overview" target="_self">Docs</a></li><li class=""><a href="http://try.jsonata.org" target="_self">Try</a></li><li class=""><a href="https://github.com/jsonata-js/jsonata" target="_self">GitHub</a></li><li class=""><a href="https://www.npmjs.com/package/jsonata" target="_self">NPM</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Operators</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-nodejs">In NodeJS</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/using-browser">In a Web Page</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/simple">Simple Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/predicate">Predicate Queries</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/expressions">Functions and Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/construction">Result Structures</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/composition">Query Composition</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/sorting-grouping">Sorting, Grouping and Aggregation</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/processing">Processing Model</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/programming">Functional Programming</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/regex">Regular Expressions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time">Date/Time Processing</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Operators</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/path-operators">Path Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-operators">Numeric Operators</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/2.0.0/comparison-operators">Comparison Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-operators">Boolean Operators</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/other-operators">Other Operators</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Function Library</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/string-functions">String Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/numeric-functions">Numeric Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/aggregation-functions">Aggregation Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/boolean-functions">Boolean Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/array-functions">Array Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/object-functions">Object Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/date-time-functions">Date/Time Functions</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/higher-order-functions">Higher Order Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Extending JSONata</h3><ul class=""><li class="navListItem"><a class="navItem" href="/2.0.0/embedding-extending">Embedding and Extending JSONata</a></li><li class="navListItem"><a class="navItem" href="/2.0.0/contributing">Community and Contributing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/jsonata-js/jsonata/edit/master/docs/comparison-operators.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Comparison Operators</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="-equals"></a><a href="#-equals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>=</code> (Equals)</h2>
+<p>The equality operator returns Boolean <code>true</code> if both operands are the same (type and value).  Arrays and objects are checked for deep equality.  Arrays must have the same values in the same order. Objects must have the same key/value pairs (order is not relevant).  Otherwise it returns <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>1+1 = 2</code> =&gt; <code>true</code></li>
+<li><code>&quot;Hello&quot; = &quot;World&quot;</code> =&gt; <code>false</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="-not-equals"></a><a href="#-not-equals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>!=</code> (Not equals)</h2>
+<p>The inequality operator returns Boolean <code>false</code> if both operands are the same (type and value, deep equality).  Otherwise it returns <code>true</code>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>1+1 != 3</code> =&gt; <code>true</code></li>
+<li><code>&quot;Hello&quot; != &quot;World&quot;</code> =&gt; <code>true</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="-greater-than"></a><a href="#-greater-than" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&gt;</code> (Greater than)</h2>
+<p>The 'greater than' operator returns Boolean <code>true</code> if the LHS is numerically greater than the RHS.  Otherwise it returns <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>22 / 7 &gt; 3</code> =&gt; <code>true</code></li>
+<li><code>5 &gt; 5</code> =&gt; <code>false</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="-less-than"></a><a href="#-less-than" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;</code> (Less than)</h2>
+<p>The 'less than' operator returns Boolean <code>true</code> if the LHS is numerically less than the RHS.  Otherwise it returns <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>22 / 7 &lt; 3</code> =&gt; <code>false</code></li>
+<li><code>5 &lt; 5</code> =&gt; <code>false</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="-greater-than-or-equals"></a><a href="#-greater-than-or-equals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&gt;=</code> (Greater than or equals)</h2>
+<p>The 'greater than or equals' operator returns Boolean <code>true</code> if the LHS is numerically greater than or equal to the RHS.  Otherwise it returns <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>22 / 7 &gt;= 3</code> =&gt; <code>true</code></li>
+<li><code>5 &gt;= 5</code> =&gt; <code>true</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="-less-than-or-equals"></a><a href="#-less-than-or-equals" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;=</code> (Less than or equals)</h2>
+<p>The 'less than or equals' operator returns Boolean <code>true</code> if the LHS is numerically less than or equal to the RHS.  Otherwise it returns <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>22 / 7 &lt;= 3</code> =&gt; <code>false</code></li>
+<li><code>5 &lt;= 5</code> =&gt; <code>true</code></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="in-inclusion"></a><a href="#in-inclusion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>in</code> (Inclusion)</h2>
+<p>The array (sequence) inclusion operator returns Boolean <code>true</code> if the value of the LHS is included in the array of values on the RHS.  Otherwise it returns <code>false</code>.  If the RHS is a single value, then it is treated as a singleton array.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><code>&quot;world&quot; in [&quot;hello&quot;, &quot;world&quot;]</code> =&gt; <code>true</code></li>
+<li><code>&quot;hello&quot; in &quot;hello&quot;</code> =&gt; <code>true</code></li>
+<li><code>library.books[&quot;Aho&quot; in authors].title</code></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/2.0.0/numeric-operators"><span class="arrow-prev">← </span><span>Numeric Operators</span></a><a class="docs-next button" href="/2.0.0/boolean-operators"><span>Boolean Operators</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#-equals"><code>=</code> (Equals)</a></li><li><a href="#-not-equals"><code>!=</code> (Not equals)</a></li><li><a href="#-greater-than"><code>&gt;</code> (Greater than)</a></li><li><a href="#-less-than"><code>&lt;</code> (Less than)</a></li><li><a href="#-greater-than-or-equals"><code>&gt;=</code> (Greater than or equals)</a></li><li><a href="#-less-than-or-equals"><code>&lt;=</code> (Less than or equals)</a></li><li><a href="#in-inclusion"><code>in</code> (Inclusion)</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jsonata-white-167.png" alt="JSONata"/></a><div><h5>JSONata</h5><a href="http://jsonata.org" target="_blank" rel="noreferrer noopener">JSON query and<br/>transformation language</a><a href="http://try.jsonata.org" target="_blank" rel="noreferrer noopener">Go play in the<br/>JSONata Exerciser</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jsonata" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://jsonata.slack.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/jsonata-js/jsonata">GitHub</a><a class="github-button" href="https://github.com/jsonata-js/jsonata" data-icon="octicon-star" data-count-href="/jsonata-js/jsonata/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2021 JSONata.org</section></footer></div></body></html>
